@@ -2073,6 +2073,7 @@
     <Content Include="Views\SanPham\SPDetail.cshtml" />
     <Content Include="Views\GioHang\Index.cshtml" />
     <Content Include="Views\Home\timkiemsp.cshtml" />
+    <Content Include="Views\GioHang\ThanhToan.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

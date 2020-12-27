@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewBag.Title = "ThanhToan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section>
+    <div id="thanhtoan" style="margin-left: 100px;">
+        <form action="">
+            <table style="margin-left: 10px; margin-bottom: 30px;">
+
+                <tr>
+                    <td><h2>Nhập thông tin cá nhân:</h2></td>
+                    <td><h2 style="margin-left: 70px;">Chọn hình thức thanh toán</h2></td>
+                </tr>
+                <tr>
+                    <td>Giới tính:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="GT" checked="true">Nam
+                        <input type="radio" name="GT">Nữ
+                    </td>
+                    <td>
+                        <input type="radio" name="thanhtoan" checked="true" style="width: 20px;height: 20px; margin-left: 80px;">Thanh toán khi nhận hàng
+                    </td>
+                </tr>
+                <tr>
+                    <td>Họ tên:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="txtTen" placeholder="Mời bạn nhập Họ tên" name="" size="70" style="padding: 5px;" onblur="kiemtraten()"><br>
+                        <span id="ktra1" style="color: red;font-size: 12px;"></span>
+                    </td>
+                    <td>
+                        <input type="radio" name="thanhtoan" style="width: 20px;height: 20px; margin-left: 80px;">Thẻ tín dụng/Thẻ ghi nợ
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Số điện thoại:</td>
+                </tr>
+                <tr>
+                    <!-- <td><input type="number" id="txtSdt" placeholder="Mời bạn nhập Số điện thoại"  min="0" style= "height: 30px; width: 477px;"></td> -->
+                    <td>
+                        <input type="text" id="txtSDT" placeholder="Mời bạn nhập Số điện thoại" name="" size="70" style="padding: 5px;" onblur="kiemtraSDT()"><br>
+                        <span id="ktra2" style="color: red;font-size: 12px;"></span>
+                    </td>
+                    <td>
+                        <input type="radio" name="thanhtoan" style="width: 20px;height: 20px; margin-left: 80px;">Thẻ ATM nội địa
+
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="email" id="email" placeholder="Mời bạn nhập Email" name="" size="70" style="padding: 5px;" onblur="checkEmail()">
+                        <br><span id="ktra3" style="color: red;font-size: 12px;"></span>
+                    </td>
+                    <td>
+                        <input type="radio" name="thanhtoan" style="width: 20px;height: 20px; margin-left: 80px;">Thanh toán qua Master Card
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Địa chỉ nhận hàng:</td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="txt" placeholder="Mời bạn nhập Địa chỉ" name="" required size="70" style="padding: 5px;" onblur="kiemtrarong1()">
+                        <br><span id="ktra4" style="color: red;font-size: 12px;"></span>
+                    </td>
+                    <td>
+                        <input type="radio" name="thanhtoan" style="width: 20px;height: 20px; margin-left: 80px;">Thanh toán qua QR Code
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nhập mã giảm giá (nếu có):</td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Mời bạn nhập Mã giảm giá" name="" size="58" style="padding: 5px;">&nbsp;&nbsp;<input type="button" name="" value="Áp dụng" style="padding: 5px;"></td>
+                    <td>
+                        <input type="radio" name="thanhtoan" style="width: 20px;height: 20px; margin-left: 80px;">Trả góp
+                    </td>
+                </tr>
+            </table>
+            <!-- <button style="width: 180px;height: 40px; background-color: #F97407; margin-top: 10px;"><a href="#">Tiến Hành Thanh Toán</button>&nbsp;&nbsp; -->
+            <input type="submit" name="" value="Tiến Hành Thanh Toán" style="width: 180px;height: 40px; background-color: #f5791f; margin-top: 10px;color: white;">
+            <button style="width: 180px;height: 40px; background-color: #f5791f; margin-top: 10px;"><a href="trangchuda.html" style="text-decoration: none;color: white;">Quay Lại Mua Hàng</a></button>
+        </form>
+    </div>
+</section>
+<div class="clear"></div>
+

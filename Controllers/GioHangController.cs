@@ -16,6 +16,10 @@ namespace DA3Last.Controllers
         {
             return View("Index");
         }
+        public ActionResult ThanhToan()
+        {
+            return View();
+        }
         [HttpPost]
         public JsonResult AddCart(Product s)
         {
