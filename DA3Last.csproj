@@ -106,6 +106,7 @@
     <Content Include="Assets\admin\css\app.min.css" />
     <Content Include="Assets\admin\css\dangnhap.css" />
     <Content Include="Assets\admin\css\giohang.css" />
+    <Content Include="Assets\admin\css\Login.css" />
     <Content Include="Assets\admin\demo\css\demo.css" />
     <Content Include="Assets\admin\demo\img\blog\1.jpg" />
     <Content Include="Assets\admin\demo\img\blog\2.jpg" />
@@ -486,17 +487,13 @@
     <Content Include="Assets\admin\img\browsers\index_files\Australia.png" />
     <Content Include="Assets\admin\img\browsers\index_files\bootstrap.min.js" />
     <Content Include="Assets\admin\img\browsers\index_files\Brazil.png" />
-    <Content Include="Assets\admin\img\browsers\index_files\chart-tooltips.js" />
     <Content Include="Assets\admin\img\browsers\index_files\chrome.png" />
-    <Content Include="Assets\admin\img\browsers\index_files\curved-line.js" />
-    <Content Include="Assets\admin\img\browsers\index_files\curvedLines.js" />
     <Content Include="Assets\admin\img\browsers\index_files\edge.png" />
     <Content Include="Assets\admin\img\browsers\index_files\firefox.png" />
     <Content Include="Assets\admin\img\browsers\index_files\ie.png" />
     <Content Include="Assets\admin\img\browsers\index_files\Japan.png" />
     <Content Include="Assets\admin\img\browsers\index_files\jquery.easypiechart.min.js" />
     <Content Include="Assets\admin\img\browsers\index_files\jquery.flot.js" />
-    <Content Include="Assets\admin\img\browsers\index_files\jquery.flot.resize.js" />
     <Content Include="Assets\admin\img\browsers\index_files\jquery.min.js" />
     <Content Include="Assets\admin\img\browsers\index_files\jquery.sparkline.min.js" />
     <Content Include="Assets\admin\img\browsers\index_files\jquery.vmap.min.js" />
@@ -966,6 +963,7 @@
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\controllers\Client.js" />
+    <Content Include="Scripts\controllers\DonHang.js" />
     <Content Include="Scripts\controllers\LoginAJS.js" />
     <Content Include="Scripts\controllers\Qli.js" />
     <Content Include="Scripts\FileAPI.flash.swf" />
@@ -1733,16 +1731,20 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\BrandController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoriesController.cs" />
-    <Compile Include="Areas\Admin\Controllers\DangNhapController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\QLDonHangController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SignupController.cs" />
     <Compile Include="Areas\Admin\Controllers\SupplierController.cs" />
     <Compile Include="Bussiness\BrandBUS.cs" />
     <Compile Include="Bussiness\CategoriesBUS.cs" />
     <Compile Include="Bussiness\DangNhapBUS.cs" />
     <Compile Include="Bussiness\DonHangBUS.cs" />
+    <Compile Include="Bussiness\LoginBus.cs" />
     <Compile Include="Bussiness\ProductBUS.cs" />
+    <Compile Include="Bussiness\QLUserBus.cs" />
+    <Compile Include="Bussiness\SignupBus.cs" />
     <Compile Include="Bussiness\SupplierBUS.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -1750,11 +1752,13 @@
     <Compile Include="Controllers\SanPhamController.cs" />
     <Compile Include="DataAccess\BrandDAL.cs" />
     <Compile Include="DataAccess\CategoriesDAL.cs" />
+    <Compile Include="DataAccess\CTDonHangDAL.cs" />
     <Compile Include="DataAccess\DangNhapDAL.cs" />
     <Compile Include="DataAccess\DataHelper.cs" />
     <Compile Include="DataAccess\DonHangDAL.cs" />
     <Compile Include="DataAccess\ProductDAL.cs" />
     <Compile Include="DataAccess\SupplierDAL.cs" />
+    <Compile Include="DataAccess\UserDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -1767,6 +1771,7 @@
     <Compile Include="Models\KhachHang.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Supplier.cs" />
+    <Compile Include="Models\Users.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -2034,8 +2039,10 @@
     <Content Include="Areas\Admin\Views\Categories\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Supplier\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Index.cshtml" />
-    <Content Include="Areas\Admin\Views\DangNhap\Index.cshtml" />
     <Content Include="Areas\Admin\Views\QLDonHang\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Signup\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\QLDonHang\IndexCopy.cshtml" />
     <None Include="packages.config" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />

@@ -65,5 +65,20 @@ namespace DA3Last.DataAccess
             }
             return dh;
         }
+        public Users CheckAccount(string name, string Pass)
+        {
+            string sql = "SELECT * FROM users WHERE UserName = '" + name + "' AND Pass = '" + Pass + "'";
+            DataTable dt = dth.laydulieu(sql);
+
+            if (dt.Rows.Count <= 0)
+            {
+                return null;
+            }
+            else
+            {
+                Users us = new Users(int.Parse(dt.Rows[0][0].ToString()), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString());
+                return us;
+            }
+        }
     }
 }

@@ -38,5 +38,11 @@ namespace DA3Last.Bussiness
         {
             return dhd.suadonhang(d);
         }
+        
+       
+        public Users KiemTraDangNhap(string name, string pass)
+        {
+            return dhd.CheckAccount(name, pass);
+        }
     }
 }

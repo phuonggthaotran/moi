@@ -14,7 +14,7 @@ namespace DA3Last.Controllers
         // GET: GioHang
         public ActionResult Index()
         {
-            return View();
+            return View("Index");
         }
         [HttpPost]
         public JsonResult AddCart(Product s)
@@ -34,6 +34,7 @@ namespace DA3Last.Controllers
                
                 giohang.Add(d);
             }
+
             return Json(new { ctdon = d }, JsonRequestBehavior.AllowGet);
         }
         public JsonResult GetCarts()

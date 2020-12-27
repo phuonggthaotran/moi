@@ -204,9 +204,9 @@ myapp.controller("QLBrandController", function ($scope, $rootScope, $http, Uploa
     $rootScope.Logout = function () {
         $http({
             method: 'POST',
-            url: '/Admin/DangNhap/Logout'
+            url: '/Admin/Login/Logout'
         }).then(function () {
-            $window.location.href = '/Admin/DangNhap/Index';
+            $window.location.href = '/Admin/Login/Index';
         }, function () { });
     };
     $http.get('/Admin/Brand/getThuongHieu').then(function (d) {

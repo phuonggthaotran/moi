@@ -2,6 +2,7 @@
 @{
     Layout = null;
 }
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,20 +26,19 @@
     <div class="main" ng-controller="LoginController">
         <h2>ĐĂNG NHẬP</h2>
         <div id="div1">
-            <input type="text" name="" placeholder="Tên tài khoản, SĐT, Email" id="textid" ng-model="US">
+            <input type="text" name="" placeholder="Tên tài khoản, SĐT, Email" id="textid" ng-model="UN">
         </div>
         <div id="div2">
             <input type="password" name="" placeholder="Mật khẩu" id="textpw" ng-model="PW">
         </div>
         <div id="div3">
-            <button onclick="dangnhap()" ng-click="Dn(US,PW)">ĐĂNG NHẬP NGAY</button>
+            <button onclick="dangnhap()" ng-click="Login(UN,PW)">ĐĂNG NHẬP NGAY</button>
         </div>
         <div style="font-size: 14px; color: #555;">Hoặc</div>
         <div id="div4">
-            <button><a href="dangky.html">TẠO TÀI KHOẢN MỚI</a></button>
+            <button><a href="/Admin/Signup/Index">TẠO TÀI KHOẢN MỚI</a></button>
         </div>
         <div id="div5"><a href="">Quên mật khẩu ?</a></div>
     </div>
 </body>
 </html>
-

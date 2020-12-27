@@ -4,5 +4,55 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<section >
+    <div id="giohang" style="width: 1200px;margin-left: 70px;" ng-controller="SanPhamCtrl">
+        <form action="">
+            <p style="font-size: 14px;">
+                <a href="/Home/Index" style="text-decoration: none;">Trang chủ &nbsp;</a><span>>></span>&nbsp; Giỏ hàng
+            </p>
+            <table width="1200px">
+                <!-- <img src="Image/giohang.jpg" style="width: 650px; height: 300px;font-weight: 300px;"> -->
+                <tr align="center">
+                    <th style="padding: 10px;">Mô tả</th>
+                    <th style="padding: 10px;">Thông tin đơn hàng</th>
+                    <th style="padding: 10px;">Số lượng</th>
+                    <th style="padding: 10px;">Giá tiền</th>
+                    <th style="padding: 10px;">Thao tác</th>
+
+                </tr>
+                <tr align="center" id="xoaNSP1" ng-repeat="s in dsDonHang">
+                    <td><img src="~/Assets/client/image/{{s.image}}" style="height:120px; width:145px;float: left;margin: 10px;"></td>
+                    <td>
+
+                        <p style="font-size: 14px;padding-top: 10px;">
+                            <a href="1.html" style="text-decoration: none;color: blue;"><span style="font-size: 18px;"> {{s.product_name}}</span> </a><br>
+                            Màn hình Full HD <br>
+                            Kết nối mạng Wi-Fi, LAN<br>
+                            Công nghệ xử lý hình ảnh HDR<br>
+                            Âm thanh ClearAudio chất lượng <br>
+                            Giao diện Smart TV mới<br><br>
+
+                        </p>
+                    </td>
+                    <td style="padding: 10px;"><input type="number" name="" value="1" min="1" style="height: 15px; width: 35px;"></td>
+                    <td style="padding: 10px;">{{s.price}}</td>
+                    <td><input type="button" value="Xóa" onclick="xoaNSP1()" style="background-color: cadetblue;"></td>
+                </tr>
+               
+
+            </table>
+            <p style="text-align:right;padding-right:30px">
+                <b style="color: darkblue;font-size: 18px;">Tổng tiền:{{TT}}đ</b>
+                <br><span style="font-style: italic;font-size: 14px;">(Đã bao gồm phí vận chuyển)</span>
+            </p>
+            <p></p>
+            <p></p>
+
+            <!-- <button style="width: 180px;height: 40px; background-color: #F97407; margin-top: 10px;"><a href="#">Tiến Hành Thanh Toán</button>&nbsp;&nbsp; -->
+            <button ng-click="ThanhToan(s)" style="width: 180px;height: 40px; background-color: #f5791f; margin:10px 20px 0px 200px"><a href="thanhtoan.html" style="text-decoration: none;color: white;">Tiến Hành Thanh Toán</a></button>
+            <button style="width: 180px;height: 40px; background-color: #f5791f; margin-top: 10px;"><a href="trangchuda.html" style="text-decoration: none;color: white;">Quay Lại Mua Hàng</a></button>
+        </form>
+    </div>
+</section>
+<div class="clear"></div>
 
