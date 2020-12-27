@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/controllers/Qli.js"></script>
+<div ng-controller="QLCategoryController">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Quản lý loại sản phẩm</h4>
+            <button type="button" class="btn btn-info btn--raised" id="btnAdd" data-toggle="modal" data-target="#modal-default" ng-click="ThemLoai()">Thêm</button>
+            <div class="table-responsive">
+                <table id="data-table" class="table table-bordered">
+                    <thead class="thead-default">
+                        <tr>
+                            <th>Mã thương hiệu</th>
+                            <th>Tên loại</th>
+                            
+                            
+                            <th>Mô tả</th>
+                            <th>Sửa</th>
+                            <th>Xóa</th>
+                        </tr>
+                    </thead>
+                    @*<tfoot>
+                            <tr>
+                                <th>id</th>
+                                <th>Tên thương hiệu</th>
+                                <th>Hình ảnh</th>
+                                <th>Mô tả</th>
+                                <th>Sửa</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </tfoot>*@
+                    <tbody>
+
+                        <tr ng-repeat="n in listloaisp" ng-class-even="'even'" ng-class-odd="'odd'">
+                            <td>{{n.brand_id}}</td>
+                            <td>{{n.name}}</td>
+                            
+                            <td>{{n.description}}</td>
+                            <td><a data-toggle="modal" data-target="#modal-default" ng-click="SuaLoai(n)"><i class="zmdi zmdi-edit zmdi-hc-fw" style="color: black"></i></a></td>
+                            <td><a ng-click="XoaLoai(n)" class="delete" name="delete"><i class="zmdi zmdi-delete zmdi-hc-fw delete-v" style="color: black"></i></a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal-default" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title pull-left">{{a}}</h5>
+                </div>
+                <div class="modal-body">
+                    <span id="form_result"></span>
+                    <form action="" method="post" id="sample_form" onsubmit="my();">
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Mã thương hiệu:</label>
+                            <select class="form-control" name="MaLoai" ng-model="loai.brand_id" required>
+                                <option ng-repeat="item in th" >{{item.id}}</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tên loại: </label>
+                            <input type="text" placeholder="Nhập tên loại" ng-model="loai.name"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+
+                        
+                        <div class="form-group">
+                            <label for="">Mô tả: </label>
+                            <textarea name="description" id="description" class="form-control" placeholder="" ng-model="loai.description"></textarea>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    @*<input type="hidden" name="action" id="action" />
+                        <input type="hidden" name="hidden_id" id="hidden_id">*@
+                    <button ng-click="SaveLoai()" style="width:100px;height:40px;border:1px solid #808080;background:blue;color:white;" type="button">{{buttex}}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

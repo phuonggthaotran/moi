@@ -1,0 +1,261 @@
+body{
+	background-color:  #f0f0f0;
+	background-size:100% 100%;
+	font-family:"Arial", Times, serif;
+}
+.header{
+	width: 100%;
+}
+.main{
+	width: 600px;
+	margin: auto;
+	background: #FFFFFF
+}
+.main #div1{
+	padding-bottom: 5px;
+	background: #f0f0f0;
+}
+.main #div1 a{
+	text-decoration: none;
+	font-size: 14px;
+	color: #288ad6;
+}
+.main #div1 label{
+	margin-left: 328px;
+	font-size: 14px;
+}
+.main #div2{
+	background: #ffffff;
+	float: left;
+}
+.main #div2 img{
+	width: 75px;
+	margin-left: 30px;
+	margin-top: 20px;
+	padding-bottom: 76px;
+}
+.main #div3{
+	background: #FFFFFF;
+	margin-top: 17px;
+}
+.main #div3 a{
+	font-weight: bold;
+	color: #333;
+	text-decoration: none;
+	font-size: 14px;
+}
+.main #div3 a:hover{
+	color: #288ad6;
+}
+.main #div3 strong{
+	    font-size: 14px;
+    color: #c10017;
+    float: right;
+margin-right: 15px;
+
+}
+.main #div4{
+	width: 63%;
+	background: #FFFFFF;
+	float: left;
+	padding-right: 117px;
+}
+.main #div4 ul li{
+	padding-left: 10px;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+.main #div4 ul li a{
+	text-decoration: none;
+	font-size: 13px;
+	color: #288ad6;
+}
+.main #div5{
+	clear: both;
+	margin-left: 120px;
+}
+.main #div5 strong,span{
+	font-size: 14px;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+.main #div5 strong{
+    color: #c10017
+}
+.main #div5 span{
+	color: #333;
+}
+.main #div6{
+	margin-left: 120px;
+	padding-top:10px;
+	padding-bottom: 5px;
+}
+.main #div6 #div6_1 select{
+	height: 26px;
+	width: 140px;
+	color: #288ad6;
+	border: 1px solid #ddd;
+	outline: none;
+}
+.main #div6 #div6_1{
+	float: left;
+}
+.main #div6 #div6_2 button{
+	width: 26px;
+	height: 26px;
+	background: #FFFFFF;
+	border: 1px solid #ddd;
+	outline: none;
+}
+.main #div6 #div6_2{
+	margin-left: 350px;
+}
+.main #div6 #div6_2 input{
+	width: 20px;
+	height: 22px;
+	border: 1px solid #ddd;
+}
+.main #div6 #div6_3 input{
+	width: 16px;
+    height: 16px;
+    vertical-align: sub;
+}
+.main #div6 #div6_3 span{
+	color: #333;
+	font-size: 14px;
+}
+.main #div7{
+	width: 95%;
+	margin:auto;
+	padding-top: 15px;
+	border-top: 1px solid #eee;
+}
+.main #div7 #span2{
+	float: right;
+}
+.main #div8,#div9,#div10{
+	width: 95%;
+	margin:auto;
+}
+.main #div8 #span2{
+	float: right;
+}
+.main #div9 span{
+	font-size: 14px;
+	font-weight: bold;
+}
+.main #div9 strong{
+    font-size: 16px;
+    color: #c10017;
+    float: right;
+}
+.main #div10 a{
+text-decoration:none;
+font-size: 14px;
+float: right;
+color: #288ad6;
+}
+.main #div10{
+	padding-bottom: 10px;
+}
+.main #div11{
+	width: 100%;
+	border-top: 1px solid #ddd;
+}
+.main #div11 #div11_1,#div11_2,#div11_3{
+	width: 95%;
+	margin:auto;
+	padding-top: 10px;
+}
+.main #div11 #div11_1{
+	font-size: 14px;
+}
+.main #div11 #div11_1 input{
+	position: relative;
+	top: 1px;
+	outline: none;
+}
+.main #div11 #div11_1 #radio2{
+	margin-left: 20px;
+}
+.main #div11 #div11_2 input{
+width: 48%;	
+border: 1px solid #ddd;
+height: 40px;
+border-radius: 5px;
+outline: none;
+}
+.main #div11 #div11_2 #input2{
+float: right;
+}
+.main #div11 #div11_3 input{
+	width: 99%;
+border: 1px solid #ddd;
+height: 40px;
+border-radius: 5px;
+outline: none;
+}
+.main #div12{
+	width: 65%;
+	margin:auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.main #div12 button{
+	width: 100%;
+	height: 45px;
+	color: #fff;
+	background: #fd6e1d;
+	border: 0;
+	border-radius: 5px;
+	outline: none;
+}
+header{
+	width: 1200px;
+	margin:auto;
+}
+header ul{
+	padding-left: 0;
+	background: #fed700;
+}
+header ul li{
+display: inline-block;
+position: relative;
+}
+header ul li a{
+	text-decoration: none;
+	color: black;
+	font-weight: bold;
+	padding-left: 25px;
+}
+header ul ul{
+	display: none;
+	position: absolute;
+	background-color:#fed700;
+	margin-left: 10px;
+	padding-right: 20px;
+	padding-top: 10px;
+}
+header ul ul a{
+	line-height:50px;
+	color:black;
+	font-weight:bold;
+	text-decoration:none;
+	margin:auto;
+}
+header ul li:hover ul{
+	display: block;
+}
+header ul li a:hover{
+	color:#FFFFFF;
+}
+header ul ul a:hover{
+	color:#FFFFFF;
+}
+input[type="search"] {
+      width: 250px;
+      border: 0px;
+      outline:none;
+      height: 50px;
+    }

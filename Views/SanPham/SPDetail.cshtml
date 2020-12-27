@@ -1,0 +1,210 @@
+﻿
+@{
+    ViewBag.Title = "SPDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="trangchitiet" style="padding-top: 15px;border-bottom: 1px solid silver;margin-right: 30px;margin-left: 50px;" ng-controller="spdetail">
+    <div class="trangchitiet_tong" >
+        <div class="gioithieu" style="border-bottom: 1px solid silver;border-bottom-width: 80%; padding-bottom: 10px;">
+            <p style="font-size: 14px;">
+                <a href="~/Home/Index">Trang chủ</a><span>>></span>
+                <span>{{onesp.product_name}}</span>
+            </p>
+            <p style="font-size: 24px;padding-top: 10px;">
+                {{onesp.product_name}}
+            </p>
+        </div>
+
+
+        <div class="demo-sanpham">
+
+            <div class="div-demosanpham trai">
+                <img src="~/Assets/client/image/{{onesp.image}}"
+                     alt="" style="width:500px;height: 500px;padding-left: 12px;margin-top: 0px;">
+            </div>
+            <div class="div-demosanphamgiua" style="margin-left:15px">
+                <p>
+                    Giá:<span id="sale"> {{onesp.price | currency : "" : 0}} đ</span>
+                    <br><span id="old" style="text-decoration: line-through;font-size: 14px;"> {{onesp.description | currency : "" : 0}} đ</span>
+                </p>
+                <p style="color: seagreen ;font-weight: bold;font-size: 16px;
+                        text-transform: uppercase;padding: 10px;
+                        "><span style="color:seagreen;"><i class="fas fa-check"></i></span>CÒN HÀNG</p>
+                <div class="div-muahang">
+                    <a href="giohang.html">
+                        <p style="padding-top: 10px;">
+                            <b>MUA NGAY</b>
+                            <span style="font-size: 13px;"><br>Giao hàng tận nơi</span>
+
+                        </p>
+                    </a>
+
+                </div>
+                <div class="div-themvaogiohang">
+                    <a  id="themsp" ng-click="AddCart(s)" title="Thêm vào giỏ hàng" >
+                        <p style="padding-top: 15px;">
+                            <b>THÊM VÀO GIỎ HÀNG</b>
+                            <span style="font-size: 13px;"><br>Mua nhiều sản phẩm cùng lúc</span>
+
+                        </p>
+                    </a>
+
+                </div>
+                <div class="buycall">
+
+                    <span style="text-align: center;color:#064EA3;" id="buycallfirst"><p style="padding-top: 7px;">Liên hệ với chúng tôi để có sản phẩm tốt nhất</p></span>
+
+                    <br>
+
+                    <p style="text-align: center;">Gọi mua:<i class="fas fa-phone-square-alt"></i><a href="#" style="text-decoration: none;color: #064EA3;">0868.777.777</a><span style="color:black ;font-size: 12px;">(7:30-22:00)</span></p>
+
+
+                </div>
+                <div class="information">
+                    <p>
+                        Thùng tivi có: Sách hướng dẫn, Remote, Chân đế, Adapter
+                        Giao hàng miễn phí trong 4 tiếng (nếu đặt hàng sau 17h <span>Siêu thị điện máy Tú Lan</span> sẽ giao
+                        hàng vào hôm sau)
+                        Áp dụng 100% chính sách bảo hành từ nhà sản xuất
+                        Bảo hành chính hãng tivi 2 năm, adapter 2 năm
+                    </p>
+                </div>
+            </div>
+            <div class="div-demosanpham phai" style="margin-left: 15px;">
+                <h2 style="color: #064EA3;">HỖ TRỢ BÁN HÀNG</h2>
+
+                <P style="font-size: 15px;padding-right: 30px;padding-top: 10px;">
+                    Hotline: 0868.777.777 / 0911.510.000
+                    <br>Kinh doanh dự án: ‎0916969666 (Mr. Toàn)
+                    <br>Điều vận: ‎0911.027.999 (Mr. Dũng)
+                    <br>Khiếu nại & hỗ trợ: ‎0911.269.993 (24/24)
+                    <br>Email liên hệ: tranphuongthao2k@gmail.com
+                </P>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <hr style="width:95%;margin-left:50px">
+    <div class="thongsokythuat" style="display: flex;margin-left: 50px;border-bottom: 1px solid silver">
+        <div class="bangthongsokythuat" ng-controller="spdetail">
+            <h2 style="font-size: 24px;padding-top: 15px;padding-bottom: 10px;color:#596067">THÔNG SỐ KỸ THUẬT</h2>
+            <table cellspacing=0 cellpadding=0>
+               
+                <tr>
+                    <td class="thongsokythuat-left">Kích thước màn hình</td>
+                    <td>{{onesp.screensize}}</td>
+                </tr>
+                <tr>
+                    <td class="thongsokythuat-left">Độ phân giải</td>
+                    <td>4K( {{onesp.resolution}}) </td>
+                </tr>
+
+                <tr>
+                    <td class="thongsokythuat-left">Độ tương phản </td>
+                    <td>Độ tương phản sắc nét. HDR10</td>
+                </tr>
+                <tr>
+                    <td class="thongsokythuat-left">Kết nối wifi</td>
+                    <td>{{onesp.wifi}}</td>
+
+                </tr>
+
+                <tr>
+                    <td class="thongsokythuat-left">Kết nối cổng HDMI</td>
+                    <td ng-if="onesp.number_of_HDMI_ports=='0'">Không </td>
+                    <td ng-if="onesp.number_of_HDMI_ports=='1'">Có </td>
+                </tr>
+                <tr>
+                    <td class="thongsokythuat-left">USB</td>
+                    <td ng-if="onesp.number_of_USB_ports=='0'">Không </td>
+                    <td ng-if="onesp.number_of_USB_ports=='1'">Có </td>
+                </tr>
+                <tr>
+                    <td class="thongsokythuat-left">Điều khiển bằng giọng nói</td>
+
+                   <td>{{onesp.voice_control}}</td>
+                </tr>
+                    <tr>
+                        <td class="thongsokythuat-left">Ngày phát hành</td>
+                        <td>{{onesp.release_date}}</td>
+                    </tr>
+
+            </table>
+        </div>
+        <div class="chitietgioithieusanpham" style="float: left;margin-left: 20px;width: 800px;">
+            <div>
+                <p style="color: #596067;font-size: 22px;padding-top: 15px;padding-bottom: 10px;"><b>Đắm Chìm Trong Khung Hình 4K Đỉnh Cao</b></p>
+                <p style="font-size: 14px;">
+                    Mở ra kỷ nguyên chất lượng hình ảnh chân thực bạn chưa từng thấy.
+                    Trên một khung hình sống động, từng chi tiết nhỏ nhất được tái tạo tỉ mỉ đến khó tin, kết hợp với độ phân giải đỉnh cao, QLED 4K Q65T như bao trùm mọi giác quan, biến từng thước phim trở nên chân thật như chính bạn đang chứng kiến.
+                </p>
+                <img src="~/Assets/client/image/4k.jpg" alt="" width="750px" height="400px" style="margin:10px">
+            </div>
+            <div>
+                <p style="color: #596067;font-size: 22px;padding-top: 15px;padding-bottom: 10px;"><b>Quantum HDR</b></p>
+                <p style="font-size: 14px;">Bộ Xử Lý Quantum HDR tiên tiến sử dụng thuật toán đặc biệt để xử lý và nâng cao chất lượng hình ảnh, tự động điều chỉnh tối ưu độ sáng, âm thanh TV để thích ứng với mọi điều kiện phòng và nội dung hiển thị.</p>
+                <img src="~/Assets/client/image/quantum.jpg" alt="" width="600px" height="270px" style="margin:10px;padding-left:150px;">
+            </div>
+            <div>
+                <p style="color: #596067;font-size: 22px;padding-top: 15px;padding-bottom: 10px;"><b>Hình ảnh âm thanh hài hòa tuyệt hảo</b></p>
+                <p style="font-size: 14px;">
+                    <span><a href="#" style="text-decoration: none;color: teal;">{{onesp.product_name}}</a></span> giúp bạn sống trọn với hiện tại cùng
+                    hình ảnh chân thực như cuộc sống và âm thanh xứng tầm đẳng cấp. Hình ảnh tinh tế đến từng chi tiết kết hợp cùng Sound-from-Picture Reality™ của chúng tôi cho hiệu suất âm thanh-hình ảnh tuyệt diệu.
+                </p>
+                <img src="~/Assets/client/image/sony1.gif" alt="" width="750px" height="400px" style="margin:10px">
+            </div>
+            <div>
+                <p style="color: #596067;font-size: 22px;padding-top: 15px;padding-bottom: 10px;"><b>Tác phẩm nghệ thuật</b></p>
+                <p style="font-size: 14px;">Nâng tầm không gian sống với các tác phẩm nghệ thuật trứ danh và đa dạng chủ đề khác nhau để bạn lựa chọn.</p>
+                <img src="~/assets/client/image/gt8k2.jpg" alt="" width="750px" height="400px" style="margin:10px">
+            </div>
+            <div>
+                <p style="color: #596067;font-size: 22px;padding-top: 15px;padding-bottom: 10px;"><b>Công suất cao hơn, hiệu suất mạnh hơn, vẻ đẹp hoàn mỹ hơn</b></p>
+                <p style="font-size: 14px;"><span><a href="#" style="text-decoration: none;color: teal;">Tivi Sony </a></span> với bộ xử lý 4K HDR X1™ Extreme có khả năng xử lý hình ảnh trong thời gian thực mạnh mẽ cho hình ảnh chi tiết cực độ. Hình ảnh bạn xem được nâng cấp lên gần chất lượng 4K HDR thực sự.</p>
+                <img src="~/Assets/client/image/sony2.gif" alt="" width="750px" height="400px" style="margin:10px">
+            </div>
+            <div>
+                <p style="color: #596067;font-size: 22px;padding-top: 15px;padding-bottom: 10px;"><b>Chỉ cần nói để khám phá thế giới mới</b></p>
+                <p style="font-size: 14px;">Chỉ cần nói để tìm tất cả nội dung giải trí bạn muốn. Với tính năng điều khiển bằng giọng nói tiên tiến, chiếc Android TV™ này của Sony cho bạn tận hưởng ngay các bộ phim và chương trình TV từ các ứng dụng hoặc chương trình phát sóng.</p>
+                <img src="~/Assets/client/image/sony3.jpg" alt="" width="750px" height="400px" style="margin:10px">
+            </div>
+            <div>
+                <p style="color: #596067;font-size: 22px;padding-top: 15px;padding-bottom: 10px;"><b>Công nghệ Purcolour</b></p>
+                <p style="font-size: 14px;">Cảm nhận hình ảnh chân thực, sống động trong từng khung hình với công nghệ Purcolour. Lạc vào thế giới đầy màu sắc, đắm chìm trong từng khoảnh khắc sắc nét đến kinh ngạc.</p>
+                <img src="https://cdn.pico.vn/Product/39231/317887_samsung-ua65ru7100kxxv.jpg" alt="" width="750px" height="400px" style="margin:10px">
+            </div>
+
+        </div>
+    </div>
+    <div class="biasanpham" style="padding-top: 15px;margin-right: 30px;margin-left: 50px;">
+
+        <p style="font-size: 24px;padding-top: 10px;padding-bottom: 10px;">SẢN PHẨM CÙNG LOẠI</p>
+        <div id="main" >
+            <div class="div200" ng-repeat="x in sanPhamLienQuan">
+                <a href="~/Home/SPDetail?id={{x.id}}"><img src="~/Assets/client/image/{{x.image}}" alt=""></a>
+                <a href="~/Home/SPDetail?id={{x.id}}"><p>{{x.product_name}} </p></a>
+                <br> <p style="color: red;"><b> {{x.price | currency : "" : 0}} đ</b></p>
+                <p style="font-size: 12px; text-decoration: line-through;">
+                    {{x.description | currency : "" : 0}}đ
+                </p>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function themsp() {
+                var them = confirm("Sản phẩm của bạn đã được thêm vào giỏ hàng !!");
+                if (them == true) {
+                    document.getElementById("themsp").innerHTML = "";
+                }
+            }
+        </script>
+
+    </div>
+</section>
+<div class="clear"></div>
+
+<script src="~/Scripts/controllers/Client.js"></script>
+

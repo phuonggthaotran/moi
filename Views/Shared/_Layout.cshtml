@@ -1,0 +1,203 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TÚ LAN|Tivi cho mọi nhà</title>
+    <style type="css/text"></style>
+    <link rel="stylesheet" href="~/Assets/client/css/trangchuda.css">
+    <link rel="stylesheet" href="~/Assets/client/css/huongdan.css">
+    <link rel="stylesheet" href="~/Assets/client/css/1.css">
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/controllers/Client.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <!-- use icons font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+
+
+
+</head>
+<body class="green" ng-app="HomeApp">
+    <!-- HEADER -->
+    <div class="body">
+        <!-- header -->
+        <header>
+            <div id="trai">
+                <a href="trangchuda.html">
+                    <img class="logo" src="~/Assets/client/image/logo đồ án.png" alt="Logo" title="Điện máy Tú Lan|tivi của mọi nhà">
+
+                </a>
+            </div>
+            <div id="trai1" style="margin-top: 15px;">
+                <a href="lienhe.html">
+
+                    <img class="sdtlogo" src="~/Assets/client/image/sđt liên hệ.PNG" style="padding-bottom: 3px;">
+                </a>
+            </div>
+
+
+            <div class="topnav">
+                <div class="search-container">
+                    <form action="/action_page.php">
+                        <input type="text" placeholder="Tìm kiếm.." name="search">
+                        <button type="submit"><span><i class="fas fa-search"></i></span></button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-menu-right">
+                <a href=""><i class="fa fa-user-circle-o"></i></a>
+                <a href="giohang.html"><i class="fa fa-shopping-cart"></i></a>
+            </div>
+            <!--<div class="col-7 col-info">
+
+            <div class="navholder">
+                <nav class="subnav" ng-controller="AuthController">
+                    <ul ng-show="authentication">-->
+            @*nếu đăng nhập rồi thì hiện thông tin tài khoản và nút đăng xuất*@
+            <!--<li><i class="fa fa-phone"></i><a href="#">0386420310</a></li>
+                <li>Xin chào, <a href="#" class="user"></a></li>
+                <li><a href="/Home/DangXuat">Đăng xuất</a></li>
+            </ul>
+            <ul ng-show="!authentication">-->
+            @*nếu chưa đăng nhập thì hiện nút dăng kí, đăng nhập*@
+            <!--<li><i class="fa fa-phone"></i><a href="#">0386420310</a></li>
+                            <li><a href="/Home/DangKy">Đăng ký</a></li>
+                            <li><a href="/Home/DangNhap">Đăng nhập</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>-->
+            <div class="dki">
+            <a href="dangnhap.html" class="dangnhap">Đăng nhập</a><span style="padding-left: 5px;padding-right: 5px;">|</span><a href="dangki.html" class="dangki">Đăng kí</a></div>
+            <!-- <div><i class="fas fa-cart-plus"></i></div> -->
+            <!--</div>-->
+        </header>
+        <!-- menu chính -->
+        <nav class="menu-ngang" ng-controller="brand">
+            <ul>
+                <li><span style="color: white;"><i class="fas fa-home"></i></span><a href="~/Home/Index" title="Trang chủ">Trang chủ</a></li>
+                <li>
+                    <span style="color: white;"><i class="fas fa-list"></i></span>
+                    <a href="#" class="menu-chinh" id="menu-chinh">
+                        Sản phẩm
+                    </a>
+                    <ul class="dropmenu">
+                        <li ng-repeat="x in brand">
+                            <a href="#"> {{x.name}}</a>
+                            <!-- <hr width="215px" ></li> -->
+                    </ul>
+                </li>
+                <li><span style="color: white;"><i class="far fa-edit"></i></span><a href="~/Home/GioiThieu" title="Giới thiệu">Giới thiệu</a></li>
+                <li><span style="color: white;"><i class="fas fa-shopping-bag"></i></span><a href="~/GioHang/GioHang" title="Khuyến mãi">Khuyến mãi</a></li>
+
+                <li><span style="color: white;"><i class="fas fa-phone-square"></i></span><a href="~/Home/LienHe" title="Liên hệ">Liên hệ</a></li>
+            </ul>
+
+        </nav>
+        <!-- banner -->
+        <!-- chọn mặt hàng -->
+
+        @RenderBody()
+        <div class="footer_top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="column_slogan col-xs-12 col-sm-12 col-md-3 col-lg-3" style="margin-left:80px;">
+                        <span class="icon-f"><i class="fas fa-cart-arrow-down"></i></span> <div class="title_sl">Sản phẩm chính hãng</div>
+                        <br /><div class="subtitle_sl">Hàng hóa đa dạng, phong phú nhiều chủng loại</div>
+                    </div>
+
+                    <div class="column_slogan col-xs-12 col-sm-12 col-md-3 col-lg-3">
+                        <span class="icon-f"><i class="fas fa-shipping-fast"></i></span>
+                        <div class="title_sl">Vận chuyển siêu tốc</div>
+                        <br /><div class="subtitle_sl">Giao hàng tận nơi,đảm bảo chất lượng sản phẩm</div>
+                    </div>
+
+                    <div class="column_slogan col-xs-12 col-sm-12 col-md-3 col-lg-3" style="margin-right:40px;">
+                        <span class="icon-f"> <i class="fas fa-clipboard-list"></i></span><div class="title_sl">Uy tín, chất lượng</div>
+                        <br /> <div class="subtitle_sl">Cam kết chính sách bảo hành và chế độ hậu mãi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @* Footer *@
+        <footer class="chantrang">
+
+
+
+            <div class="information">
+                <h2><b>THÔNG TIN</b></h2>
+                <br>
+                <P>
+                    Trụ sở chính: 30 Nhân Hòa-Mỹ Hào-Hưng Yên
+                    <br>Hotline: 0868.777.777 / 0911.510.000 / 0911.639.199
+                    <br>Kinh doanh dự án: ‎0916969666 (Mr. Toàn)
+                    <br>Điều vận: ‎0911.027.999 (Mr. Dũng)
+                    <br>Khiếu nại & hỗ trợ: ‎0911.269.993 (24/24)
+                    <br>Email liên hệ: tranphuongthao2k@gmail.com
+                </P>
+
+            </div>
+            <div class="information">
+
+
+                <ul>
+                    <h2><b>HỖ TRỢ KHÁCH HÀNG</b></h2>
+
+                    <li><i class="fas fa-caret-right"></i><a href="~/Home/LienHe">Liên hệ-góp ý</a></li>
+                    <li><i class="fas fa-caret-right"></i><a href="~/Home/HuongDanMuaHang">Hướng dẫn mua hàng</a></li>
+                    <li><i class="fas fa-caret-right"></i><a href="~/Home/HuongDanMuaHang">Hướng dẫn trả góp</a></li>
+                </ul>
+
+            </div>
+            <div class="information">
+
+
+                <ul>
+                    <h2><b>CHÍNH SÁCH MUA HÀNG</b></h2>
+                    <li><i class="fas fa-caret-right"></i><a href="~/Home/ChinhSachThanhToan">Chính sách thanh toán</a> </li>
+                    <li><i class="fas fa-caret-right"></i><a href="~/Home/ChinhSachThanhToan">Chính sách vận chuyển</a></li>
+                    <li><i class="fas fa-caret-right"></i><a href="~/Home/ChinhSachThanhToan">Chính sách bảo mật thông tin</a></li>
+                    <li><i class="fas fa-caret-right"></i><a href="~/Home/ChinhSachThanhToan">Chính sách xử lý khiếu nại</a></li>
+                    <li><i class="fas fa-caret-right"></i><a href="~/Home/ChinhSachThanhToan">Chính sách bảo hành</a> </li>
+                    <li><i class="fas fa-caret-right"></i><a href="~/Home/ChinhSachThanhToan">Chính sách đổi trả hàng</a> </li>
+
+                </ul>
+
+            </div>
+            <div class="information" style="margin-left: 15px;">
+                <h3>Theo dõi chúng tôi tại</h3>
+                <a href="https://www.facebook.com/profile.php?id=100011339886410" class="social-icon" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.facebook.com/ken.hihi1" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="mailto:lythanhtoan2000@gmail.com" class="social-icon" target="_blank"><i class="fab fa-google"></i></a>
+                <a href="https://www.youtube.com/feed/my_videos" class="social-icon" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/ken.hihi/?hl=vi" class="social-icon" target="_blank"><i class="fab fa-instagram"></i></a>
+
+            </div>
+
+            <div class="textwidget">
+                <p>
+                    <span style="font-size: 14px;padding-top: 5px;">
+                        &copy;Trần Phương Thảo
+                    </span>
+                </p>
+            </div>
+
+        </footer>
+    </div>
+
+
+    <!-- Script-->
+
+    <script src="~/Scripts/controllers/Client.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+
+</body>
+
+</html>
+
+
+

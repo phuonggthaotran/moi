@@ -1,0 +1,120 @@
+.header{
+	background: #4b708b;
+    width: 100%;
+    padding: 0px;
+}
+.header li{
+ color: #FFFFFF;
+ display: inline-block;
+ font-size: 30px;
+ padding-top: 15px;
+ padding-bottom: 15px;
+
+}
+.header #li1{
+	position: relative;
+	right: 40px;
+}
+.header #li2{
+	margin-left:100px;
+}
+.header li:hover{
+	background-color:#596478;
+}
+.slidLeft{
+    float:left;
+    width:20%;
+    background-color:#596478;
+    position: relative;
+    bottom: 15.6px;
+}
+.slidLeft nav ul { 
+	      list-style:none;
+          padding:0px;
+          margin:auto;
+ }
+ .slidLeft nav ul li {
+     border-bottom:1px solid #676f7d;
+     padding:4px;
+     line-height:40px;
+ }
+.slidLeft nav ul li a {
+     text-decoration:none;
+     color:#ffffff;
+     display:block;
+ }
+ .slidLeft nav ul li:hover{
+     background-color:#5a788f;
+ }
+ .slidRight{
+ 	width: 79%;
+     float: right;
+     border: 1px solid #ddd;
+     padding-bottom: 80px;
+ }
+ .slidRight table{
+     margin: auto;
+     margin-top: 5px;
+     height: 50px;
+     width: 95%;
+     border-top: 1px solid #ddd;
+     border-left: 1px solid #ddd;
+     clear: both;
+ }
+.slidRight table td {
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.slidRight table #tr1{
+    text-align:center;
+    background-color:#4d6082;
+    color:aliceblue; 
+}
+.slidRight table td{ 
+    text-align:center;
+}
+.slidRight table td button{
+    background-color: #ffffff;
+    border: 0;
+}
+.slidRight table td button img{
+    width: 30px;
+    height: 30px;
+}
+.slidRight #editdienthoai,#editldt{
+    text-align:center;
+    display:none;
+    position:relative;
+}
+.slidRight #them{
+    width: 15%;
+    height: 50px;
+    float: right;
+    padding-bottom: 10px;
+    margin-right: 27px;
+}
+.slidRight #them button{
+    float: left;
+    width: 100%;
+    outline: none;
+    height: 40px;
+    margin-right: 28px;
+    margin-top: 10px;
+    background-color: skyblue;
+    border: 1px solid #eee;
+}
+.slidRight #them button:hover #edit{
+    display:block;
+}
+ footer{
+    width:100%; 
+	font-size: 10px;
+	color: #999;
+	text-align: center;
+    background: #eee;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    clear: both;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}

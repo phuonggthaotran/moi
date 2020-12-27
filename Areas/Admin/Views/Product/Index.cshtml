@@ -1,0 +1,200 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/controllers/Qli.js"></script>
+<div ng-controller="QLProductController">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Quản lý sản phẩm</h4>
+            <button type="button" class="btn btn-info btn--raised" id="btnAdd" data-toggle="modal" data-target="#modal-default" ng-click="ThemSP()">Thêm</button>
+            <div class="table-responsive">
+                <table id="data-table" class="table table-bordered">
+                    <thead class="thead-default">
+                        <tr>
+
+                            <th>Tên loại</th>
+                            <th>Tên nhà cung cấp</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Giá</th>
+                            <th>Hình ảnh</th>
+                            <th>Số lượng</th>
+                            <th>Kích thước màn hình</th>
+                            <th>Độ phân giải</th>
+                            <th>Số cổng HDMI</th>
+                            <th>Số cổng USB</th>
+                            <th>Điều khiển bằng giọng nói</th>
+                            <th>Wifi</th>
+                            <th>Ngày sản xuất</th>
+                            <th>Tình trạng</th>
+                            <th>Mô tả</th>
+                            <th>Sửa</th>
+                            <th>Xóa</th>
+                        </tr>
+                    </thead>
+                    @*<tfoot>
+                            <tr>
+                                <th>id</th>
+                                <th>Tên thương hiệu</th>
+                                <th>Hình ảnh</th>
+                                <th>Mô tả</th>
+                                <th>Sửa</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </tfoot>*@
+                    <tbody>
+
+                        <tr ng-repeat="sp in listsp" ng-class-even="'even'" ng-class-odd="'odd'">
+
+
+                            <td>{{sp.category_id}}</td>
+                            <td>{{sp.supplier_id}}</td>
+                            <td>{{sp.product_name}}</td>
+                            <td>{{sp.price}}</td>
+                            <td><img src="~/Assets/client/image/{{sp.image}}" width="120px" alt="Alternate Text" /></td>
+                            <td>{{sp.quantity}}</td>
+                            <td>{{sp.screensize}}</td>
+                            <td>{{sp.resolution}}</td>
+                            <td>{{sp.number_of_HDMI_ports}}</td>
+                            <td>{{sp.number_of_USB_ports}}</td>
+                            <td>{{sp.voice_control}}</td>
+                            <td>{{sp.wifi}}</td>
+
+                            <td>{{sp.release_date}}</td>
+                            <td>{{sp.isContinue}}</td>
+                            <td>{{sp.description}}</td>
+
+                            <td><a data-toggle="modal" data-target="#modal-default" ng-click="SuaSP(sp)"><i class="zmdi zmdi-edit zmdi-hc-fw" style="color: black"></i></a></td>
+                            <td><a ng-click="XoaSP(sp)" class="delete" name="delete"><i class="zmdi zmdi-delete zmdi-hc-fw delete-v" style="color: black"></i></a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal-default" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title pull-left">{{c}}</h5>
+                </div>
+                <div class="modal-body">
+                    <span id="form_result"></span>
+                    <form action="" method="post" id="sample_form" onsubmit="my();">
+
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Tên loại sản phẩm:</label>
+                            <select class="form-control" name="MaLoai" ng-model="pr.category_id" required>
+                                <option ng-repeat="i in listlsp" >{{i.id}}</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Tên nhà cung cấp:</label>
+                            <select class="form-control" name="MaLoai" ng-model="pr.supplier_id" required>
+                                <option ng-repeat="it in dsncc" >{{it.id}}</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tên sản phẩm: </label>
+                            <input type="text" placeholder="Nhập tên sản phẩm" name="brandname" id="brandname" ng-model="pr.product_name"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for=""> Giá sản phẩm: </label>
+                            <input type="text" placeholder="Nhập giá sản phẩm" ng-model="pr.price"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Ảnh:</label>
+                            <input type="file" name="image" id="image" class="form-control" readonly ng-model="pr.image" ngf-select="UploadFiles($files,'Anh')">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Số lượng: </label>
+                            <input type="text" placeholder="Số lượng" ng-model="pr.quantity"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Kích thước màn hình: </label>
+                            <input type="text" placeholder="Kích thước màn hình" ng-model="pr.screensize"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Độ phân giải: </label>
+                            <input type="text" placeholder="Độ phân giải" ng-model="pr.resolution"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Số cổng HDMI:</label>
+                            <select class="form-control" name="MaLoai" ng-model="pr.number_of_HDMI_ports" required>
+                                <option>0</option>
+                                <option>1</option>
+
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Số cổng USB:</label>
+                            <select class="form-control" name="MaLoai" ng-model="pr.number_of_USB_ports" required>
+                                <option>0</option>
+                                <option>1</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Wifi:</label>
+                            <select class="form-control" name="MaLoai" ng-model="pr.wifi" required>
+                                <option>Có</option>
+                                <option>Không</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Điều khiển bằng giọng nói:</label>
+                            <select class="form-control" name="MaLoai" ng-model="pr.voice_control" required>
+                                <option>Có</option>
+                                <option>Không</option>
+                            </select>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="">Ngày phát hành: </label>
+                            <input type="text" placeholder="Ngày phát hành" ng-model="pr.release_date"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Tình trạng:</label>
+                            <select class="form-control" name="MaLoai" ng-model="pr.isContinue" required>
+                                <option>Còn</option>
+                                <option>Không</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Mô tả: </label>
+                            <textarea name="description" id="description" class="form-control" placeholder="" ng-model="pr.description"></textarea>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    @*<input type="hidden" name="action" id="action" />
+                        <input type="hidden" name="hidden_id" id="hidden_id">*@
+                    <button ng-click="SaveSP()" style="width:100px;height:40px;border:1px solid #808080;background:blue;color:white;" type="button">{{buttex}}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

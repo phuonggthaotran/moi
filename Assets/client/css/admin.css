@@ -1,0 +1,270 @@
+﻿ 
+/*page*/
+.page{
+    width:100%;
+    margin:1px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+header{
+    min-height:60px;
+    background-color: #3C8DBC;
+}
+footer{
+    background-color:#e0dbdb;
+    min-height:40px;
+    clear:both;
+}
+section{
+    clear:both;
+    width:99.5%;
+    min-height:1400px;
+    overflow:scroll;
+    padding:4px;
+}
+/*sidle left*/
+.slidLeft{
+    float:left;
+    width:20%;
+    background-color:#333333;
+    min-height:1500px;
+}
+.slidLeft .top{
+    height:60px;
+    background-color:#367FA9;
+}
+.slidLeft .top h1{
+    line-height:60px;
+    margin:0px;
+    padding:0px;
+    text-align:center;
+    color:aliceblue;
+}
+
+.slidRight{
+    float:right;
+    width:80%;    
+    min-height:800px;
+}
+.ad{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+   
+}
+#phai{
+    float: right;
+    margin-right: 50px;
+    margin-top: 5px;
+
+}
+#onl i{
+   color: rgb(0, 255, 115);
+ font-size: xx-small;
+}
+#onl{
+    font-size: 12px;
+}
+
+
+/*menu*/
+ nav ul { list-style:none;
+          padding:0px;
+          margin:0px;
+ }
+ nav ul li {
+     border-bottom:1px solid #333333;
+     padding:4px;
+     line-height:30px;
+     background-color: #333333;
+     padding-top: 8px;
+     font-size: 14px;
+     padding-left: 10px;
+ }
+ nav ul li a {
+     text-decoration:none;
+     color:#B8C7CE;
+     display:block;
+     
+ }
+ nav ul li a:hover{
+     color: white;
+ }
+ nav ul li:hover {
+     background-color:#222d32;
+ 
+
+ }
+ nav ul li i{
+    padding-right: 7px;
+ }
+ .clear{
+     clear: both;
+ }
+ section{
+     background-color: #ecf0f5;
+ }
+ #tim{
+     width: 600px;
+     margin: 10px;
+ }
+ /* #tim:hover{
+    border: 2px solid black;
+ } */
+ /* bảng */
+ body {
+    margin:0px;
+    padding:0px;
+}
+#bang{
+    border-top: 1px solid #f4f4f4;
+    border-left: 1px solid #f4f4f4;
+    
+}
+#bang td{
+    border-right: 1px solid #f4f4f4;
+    border-bottom: 1px solid #f4f4f4;
+    line-height:30px;
+    padding:4px;
+}
+.le{
+    background-color: #ecf0f5;
+}
+.chan{
+    background-color: #fff;
+}
+#bang tr:hover{
+    background-color: #ddd;
+}
+.them{
+    width: 170px;
+    height: 55px;
+    text-align: center;
+    background-color:#3C8DBC ;
+    float: right;
+    margin: 20px 50px 10px 0px;
+}
+.them a{
+   text-decoration: none;
+    color: #f4f4f4;
+    font-weight: bold;
+    font-size: 17px;
+   
+}
+#bang tr:first-child{text-align:center; background-color:#4d6082;
+    color:aliceblue; 
+}
+#bang td:first-child{ text-align:center; width:20px;}
+#bang td:nth-child(2){ text-align:center; width:20px;}
+/* profile */
+
+.pro{
+    width: 80%;
+    margin-left: 100px;
+    border: 1px solid #fff;
+    background-color: white;
+    margin-top: 20px;
+}
+.pro div table{
+    margin-top: 10px;
+    
+}
+
+.pro tr td{
+    color: rgb(109, 108, 108);
+    margin-left: 50px;
+    padding: 10px 18px;
+    
+}
+#pro-2{
+    padding-left: 10px;
+    width: 500px;
+    margin-bottom: 17px;
+}
+
+.information i{
+    font-size: 24px;
+    
+    width: 30px;
+    padding: 10px;
+    /* margin-right: 5px; */
+    border-radius: 50%;
+   color: #707070;
+    text-align: center;
+    margin-top: 20px;margin-bottom: 10px;
+} 
+.social-icon i:hover {
+    opacity: 0.7;
+}
+.information .fa-facebook {
+   
+    color: #3B5998;
+}
+.information .fa-twitter {
+   color: #55ACEE;
+}
+.information .fa-google {
+ color: #dd4b39;
+    
+}
+.information .fa-youtube {
+    color: #bb0000;
+}
+.information .fa-instagram {
+    color: #ea4c89;
+}
+
+.information ul li{
+    border: 1px solid #f4f4f4;
+   list-style-type: none;
+   padding: 0;
+   margin: 0;
+}
+
+#pro-2 td:nth-child(3){
+    border-bottom: 1px solid #f4f4f4;
+}
+.skill{
+    display: flex;
+    border: 1px solid #f4f4f4;
+    width: 80%;
+    margin-left: 100px;
+    background-color: white;
+    margin-top: 20px;
+}
+.skill-trai ul li{
+    list-style-type: none;
+    padding: 5px;
+    font-weight: 500;
+    
+}
+.skill-trai{
+    border-right: 1px solid #f4f4f4;
+}
+
+
+/* định dạng cho thẻ bao bọc các thẻ skill */
+.skill-phai{
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+.container {
+    width: 450px; 
+    background-color: #ddd; 
+    
+}
+/* định dạng chung cho thẻ hiển thị skill */
+.skills {
+    text-align: right;
+    padding-right: 10px;
+    line-height: 40px; 
+    color: white; 
+}
+/* định dạng cho từng skill theo số liệu */
+.html {width: 90%; background-color: #4CAF50;} 
+.css {width: 40%; background-color: #2196F3;}
+.js {width: 60%; background-color: #f44336;} 
+.php {width: 70%; background-color: #808080;}
+.skill-phai p{
+    color: #747474;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

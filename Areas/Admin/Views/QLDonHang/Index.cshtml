@@ -1,0 +1,127 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div ng-controller="QLDonHangController">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Quản lý đơn hàng</h4>
+            <div class="table-responsive">
+                <table id="data-table" class="table table-bordered">
+                    <thead class="thead-default">
+                        <tr>
+                            <th>id</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Số lượng</th>
+                            <th>Giá</th>
+                            <th>Địa chỉ giao hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
+                            <th>Ngày đặt</th>
+                            <th>Sửa</th>
+                            <th>Xóa</th>
+                        </tr>
+                    </thead>
+                    @*<tfoot>
+                            <tr>
+                                <th>id</th>
+                                <th>Tên thương hiệu</th>
+                                <th>Hình ảnh</th>
+                                <th>Mô tả</th>
+                                <th>Sửa</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </tfoot>*@
+                    <tbody>
+
+                        <tr ng-repeat="nb in listdh" ng-class-even="'even'" ng-class-odd="'odd'">
+                            <td>{{nb.id}}</td>
+                            <td>{{nb.product_name}}</td>
+                            <td>{{nb.quantity}}</td>
+                            <td>{{nb.price}}</td>
+                            <td>{{nb.address_shipping}}</td>
+                            <td>{{nb.phone_number}}</td>
+                            <td>{{nb.product_name}}</td>
+                            <td>{{nb.email}}</td>
+                            <td>{{nb.total}}</td>
+                            <td>{{nb.status}}</td>
+                            <td>{{nb.date}}</td>
+                            <td><a data-toggle="modal" data-target="#modal-default" ng-click="Suadonhang(nb)"><i class="zmdi zmdi-edit zmdi-hc-fw" style="color: black"></i></a></td>
+                            <td><a ng-click="Xoadonhang(nb)" class="delete" name="delete"><i class="zmdi zmdi-delete zmdi-hc-fw delete-v" style="color: black"></i></a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal-default" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title pull-left">Sửa đơn hàng</h5>
+                </div>
+                <div class="modal-body">
+                    <span id="form_result"></span>
+                    <form action="" method="post" id="sample_form" onsubmit="my();">
+                        <div class="form-group">
+                            <label for="">Số lượng: </label>
+                            <input type="number" placeholder="Nhập số lượng" ng-model="sp.quantity"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Số điện thoại: </label>
+                            <input type="text" placeholder="Nhập số điện thoại người nhận" ng-model="sp.phone_number"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tên địa chỉ : </label>
+                            <input type="text" placeholder="Nhập địa chỉ" ng-model="sp.address_shipping"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Trạng thái: </label>
+                            <select ng-model="sp.status">
+                                <option>Đã xác thực</option>
+                                <option>Đang giao hàng</option>
+                                <option>Đã giao hàng</option>
+                                <option>Đã hủy</option>
+                            </select>
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tên sản phẩm: </label>
+                            <input type="text" placeholder="Nhập tên thương hiệu" ng-model="sp.name"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Ảnh:</label>
+                            <input type="file" class="form-control" readonly ng-model="sp.image" ngf-select="UploadFiles($files,'Anh')">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Mô tả: </label>
+                            <textarea class="form-control" placeholder="" ng-model="sp.description"></textarea>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    @*<input type="hidden" name="action" id="action" />
+                        <input type="hidden" name="hidden_id" id="hidden_id">*@
+                    <button ng-click="Savedh()" style="width:100px;height:40px;border:1px solid #808080;background:blue;color:white;" type="button">Lưu</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/controllers/Qli.js"></script>
+

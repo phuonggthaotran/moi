@@ -1,0 +1,103 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/Scripts/controllers/Qli.js"></script>
+<div ng-controller="QLSupplierController">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Quản lý nhà cung cấp</h4>
+            <button type="button" class="btn btn-info btn--raised" id="btnAdd" data-toggle="modal" data-target="#modal-default" ng-click="ThemNCC()">Thêm</button>
+            <div class="table-responsive">
+                <table id="data-table" class="table table-bordered">
+                    <thead class="thead-default">
+                        <tr>
+                            <th>id</th>
+
+                            <th>Tên nhà cung cấp</th>
+                            <th>Số điện thoại</th>
+                            <th>Email</th>
+                            <th>Địa chỉ</th>
+                          
+                            <th>Sửa</th>
+                            <th>Xóa</th>
+                        </tr>
+                    </thead>
+                    @*<tfoot>
+                            <tr>
+                                <th>id</th>
+                                <th>Tên thương hiệu</th>
+                                <th>Hình ảnh</th>
+                                <th>Mô tả</th>
+                                <th>Sửa</th>
+                                <th>Xóa</th>
+                            </tr>
+                        </tfoot>*@
+                    <tbody>
+
+                        <tr ng-repeat="ncc in listNCC" ng-class-even="'even'" ng-class-odd="'odd'">
+                            <td>{{ncc.id}}</td>
+                            <td>{{ncc.name}}</td>
+                            <td>{{ncc.phone_number}}</td>
+                            <td>{{ncc.email}}</td>
+                            <td>{{ncc.address}}</td>
+
+                            <td><a data-toggle="modal" data-target="#modal-default" ng-click="SuaNCC(n)"><i class="zmdi zmdi-edit zmdi-hc-fw" style="color: black"></i></a></td>
+                            <td><a ng-click="XoaNCC(ncc)" class="delete" name="delete"><i class="zmdi zmdi-delete zmdi-hc-fw delete-v" style="color: black"></i></a></td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modal-default" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title pull-left">{{b}}</h5>
+                </div>
+                <div class="modal-body">
+                    <span id="form_result"></span>
+                    <form action="" method="post" id="sample_form" onsubmit="my();">
+                        <div class="form-group">
+                            <label for="">Tên nhà cung cấp: </label>
+                            <input type="text" placeholder="Nhập tên thương hiệu" name="brandname" id="brandname" ng-model="ncc.name"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Số điện thoại: </label>
+                            <input type="text" placeholder="Nhập số điện thoại" name="brandname" id="brandname" ng-model="ncc.phone_number"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tên email: </label>
+                            <input type="text" placeholder="Nhập email" name="brandname" id="brandname" ng-model="ncc.email"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Tên địa chỉ: </label>
+                            <input type="text" placeholder="Nhập đại chỉ" name="brandname" id="brandname" ng-model="ncc.address"
+                                   class="form-control">
+                            <i class="form-group__bar"></i>
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    @*<input type="hidden" name="action" id="action" />
+                        <input type="hidden" name="hidden_id" id="hidden_id">*@
+                    <button ng-click="SaveNCC()" style="width:100px;height:40px;border:1px solid #808080;background:blue;color:white;" type="button">{{buttex}}</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "sptu20den50";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="danhmuc">
+    <div class="card" style="position: static;width: 295px;height: 911px; float: left;">
+        <div class="p1-card" style="position: fixed;width: 295px;top: -180px;"></div>
+        <ul class="filter" style="float: left; padding: 9px;">
+            <li style="width: 100% !important">
+                <strong><b>CHỌN MỨC GIÁ</b></strong>
+                <ul style="word-wrap:break-word;padding-left: 0px;padding-top: 10px;">
+                   
+                    <li>
+                        <a href="/SanPham/spduoi20">
+                            <i class="fal fa-square-full"></i>
+                            <span>Dưới 20 triệu</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/SanPham/sptu20den50">
+                            <i class="fal fa-square-full"></i>
+                            <span>Từ 20-50 triệu</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="/SanPham/sptren50">
+                            <i class="fal fa-square-full"></i>
+                            <span>Trên 50 triệu</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li style="width: 100% !important">
+                <strong>Loại TIVI</strong>
+                <ul style="word-wrap:break-word;padding-left: 0px;padding-top: 10px;">
+
+                    <li style="float:left">
+                        <a href="/SanPham/TV4k">
+                            <i class="fal fa-square-full"></i>
+                            <span>Tivi Ultra HD4K</span>
+                        </a>
+                    </li>
+                    <li style="float:left">
+                        <a href="/SanPham/TVQled">
+                            <i class="fal fa-square-full"></i>
+                            <span>Tivi Qled</span>
+                        </a>
+                    </li>
+                    <li style="float:left">
+                        <a href="/SanPham/TV8k">
+                            <i class="fal fa-square-full"></i>
+                            <span>Tivi 8K</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
+            <li style="width: 100% !important">
+                <strong>MÀN HÌNH</strong>
+                <ul style="word-wrap:break-word;padding-left: 0px;padding-top: 10px;">
+
+                    <li>
+                        <a href="/SanPham/tvduoi55inch">
+                            <i class="fal fa-square-full"></i>
+                            <span>Từ 32-50 inch</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/SanPham/tvtren55inch">
+                            <i class="fal fa-square-full"></i>
+                            <span>Trên 50 inch</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </li>
+
+
+        </ul>
+    </div>
+
+</section>
+<!-- sản phẩm -->
+<section class="content" ng-controller="sptu20den50">
+   
+    <article>
+        <div id="main">
+            <h2></h2>
+            <div class="div200" ng-repeat="x in tu20den50">
+                <a href="~/SanPham/SPDetail/?id={{x.id}}"><img src="~/Assets/client/image/{{x.image}}" alt=""></a>
+                <a href="~/SanPham/SPDetail/?id={{x.id}}"><p>{{x.product_name}} </p></a>
+                <br> <p style="color: red;"><b> {{x.price | currency : "" : 0}} đ</b></p>
+                <p style="font-size: 12px; text-decoration: line-through;">
+                    {{x.descreption | currency : "" : 0}}đ
+                </p>
+            </div>
+
+        </div>
+    </article>
+    @*<br /><br />
+        &nbsp;&nbsp;&nbsp;&nbsp; Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+        &nbsp;&nbsp;&nbsp;&nbsp; @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))*@
+</section>
+
+<div class="clear"></div>
+<div class="description_cat col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <h2 style="text-align: justify;">
+        <span style="font-family: arial, helvetica, sans-serif;">
+            <strong><span style="font-size: 20px;">Tivi - Người bạn không thể thiếu của mọi gia đình</span></strong>
+        </span>
+    </h2><p style="text-align: justify;"><span style="font-size: 14px;"> Ra đời từ đầu thế kỷ 20, <span style="color: #3366ff;"><strong><a style="color: #3366ff;" href="https://thegioidienmayonline.com/tivi/">Tivi</a></strong> </span>đã mở ra một kỷ nguyên mới. Tivi đem đến những thông tin tri thức nhân loại cũng như tình hình kinh tế, chính trị. </span></p><p style="text-align: justify;"><span style="font-size: 14px;">Việc xem tivi và lựa chọn mua tivi là một cách để thư giãn đầu óc, giảm căng thẳng, đặc biệt là các chương trình giải trí, game show, hài hước... giúp cải thiện tâm trạng và xoa dịu thần kinh rất tốt.&nbsp;</span></p><h3 style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><strong><span style="font-size: 16px;">Các dòng sản phẩm tivi uy tín&nbsp;</span></strong></span></h3><p style="text-align: justify;"><span style="font-size: 14px;">Từ những chiếc tivi đen trắng thời bao cấp có giá trị cả một gia tài, đến những chiếc tivi đã trở thành biểu tượng của thiết kế sang trọng, của công nghệ hiện đại, và tân tiến với tivi màn hình phẳng, màn hình cong, tivi kết nối đa phương tiện, thông minh. Vì vậy đã có rất nhiều thương hiệu sản xuất tivi với nhiều mức giá tivi hợp lý. Điển hình như : <a href="https://thegioidienmayonline.com/tivi-samsung/"><strong>Tivi Samsung</strong></a>, <a href="https://thegioidienmayonline.com/tivi-lg/"><strong>Tivi LG</strong></a>, <a href="https://thegioidienmayonline.com/tivi-asanzo/"><strong>Tivi Asanzo</strong></a>, <a href="https://thegioidienmayonline.com/tivi-sony/"><strong>Tivi Sony</strong></a>, <a href="https://thegioidienmayonline.com/tivi-panasonic/"><strong>Tivi Panasonic</strong></a>, T<strong>ivi Toshiba</strong>, </span></p><h3 style="text-align: justify;"><span style="font-size: 16px; font-family: arial, helvetica, sans-serif;"><strong>Cách lựa chọn mua tivi hoàn hảo cho nhu cầu của gia đình bạn</strong></span></h3><p style="text-align: justify;"><span style="font-size: 14px;"><strong><a href="https://thegioidienmayonline.com/tivi-samsung/"> Smart Tivi Samsung</a></strong> nổi bật với kiểu dáng bắt mắt, trẻ trung với viền màn hình siêu mỏng, cùng độ phân giải Full HD, cho phép tivi tái hiện hình ảnh rõ nét, màu sắc rực rỡ, phong phú.</span></p><p style="text-align: justify;"><span style="font-size: 14px;"><strong> Android Tivi Sony</strong> mang trong mình thiết kế quyến rũ với viền màn hình siêu mỏng, đường viền thanh mảnh, được kết hợp chân đế sáng bóng giúp cho tổng thể trở nên lôi cuốn hơn, sẽ là điểm nhấn sáng giá cho ngôi nhà bạn.</span></p><h3 style="text-align: justify;"><span style="font-family: arial, helvetica, sans-serif;"><strong><span style="font-size: 16px;">Mua tivi theo sở thích và tính ứng dụng cao</span></strong></span></h3><p style="text-align: justify;"><span style="font-size: 14px;">Nếu nhu cầu của bạn là cần một chiếc tivi có khả năng kết nối mạng để xem Youtube, lướt web, thì internet tivi Sony là sự lựa chọn hoàn toàn thích hợp dành cho bạn.</span></p>
+</div>
+
+<script src="~/Scripts/controllers/Client.js"></script>
+

@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng nhập tài khoản</title>
+    <link rel="stylesheet" type="text/css" href="~/Assets/admin/css/dangnhap.css">
+    <script type="text/javascript">
+        function dangnhap() {
+            if (textid.value == "" || textpw.value == "") {
+                alert("Tên tài khoản hoặc Mật khẩu không được để trống !");
+            }
+        }
+    </script>
+
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+
+    <script src="~/Scripts/controllers/LoginAJS.js"></script>
+</head>
+<body ng-app="Login" style="padding-top:70px;">
+    <div class="main" ng-controller="LoginController">
+        <h2>ĐĂNG NHẬP</h2>
+        <div id="div1">
+            <input type="text" name="" placeholder="Tên tài khoản, SĐT, Email" id="textid" ng-model="US">
+        </div>
+        <div id="div2">
+            <input type="password" name="" placeholder="Mật khẩu" id="textpw" ng-model="PW">
+        </div>
+        <div id="div3">
+            <button onclick="dangnhap()" ng-click="Dn(US,PW)">ĐĂNG NHẬP NGAY</button>
+        </div>
+        <div style="font-size: 14px; color: #555;">Hoặc</div>
+        <div id="div4">
+            <button><a href="dangky.html">TẠO TÀI KHOẢN MỚI</a></button>
+        </div>
+        <div id="div5"><a href="">Quên mật khẩu ?</a></div>
+    </div>
+</body>
+</html>
+
