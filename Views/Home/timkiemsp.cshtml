@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "timkiemsp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content-page" ng-controller="SearchController">
+    <div class="container">
+        <!-- featured category  -->
+        <div class="category-featured Vegetables">
+            <nav class="navbar nav-menu show-brand">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-brand"><a href="#"> <img alt="fashion" src="~/Assets/images/icon_like.png" /> Sản phẩm</a></div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse">
+
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+
+            </nav>
+            <div class="product-featured clearfix">
+                <div class="row">
+
+                    <div class="col-sm-12">
+                        <div class="box-right">
+                            <!--&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+                                <ul class="product-list" ng-repeat="x in ListTimKiem">
+                                    <li class="col-sm-3 product-item">
+                                        <div class="left-block">
+                                            <a href="/SanPham/SPDetail?id={{x.id}}">
+                                                <img class="img-responsive" alt="product"
+                                                     src="~/Assets/client/image/{{x.image}}" />
+                                            </a>
+
+                                            <div class="quick-view">
+                                                <a title="Add to my wishlist" class="heart" href="#"></a>
+                                                <a title="Add to compare" class="compare" href="#"></a>
+                                                <a title="Quick view" href="~/Assets/images/product-detail/vegetables/spinach_600x600.jpg" class="search fancybox-button"></a>
+                                            </div>
+                                            <div class="add-to-cart">
+                                                <a class="add-item-to-cart" title="Add to Cart"  data-name="Spinach - 1kg"
+                                                   data-price="55000" data-image="vegetables/spinach_300x300.jpg" data-product-code="SP109">Thêm vào giỏ hàng</a>
+                                            </div>
+                                            <div class="bestseller"></div>
+                                        </div>
+                                        <div class="right-block">
+                                            <h5 class="product-name"><a href="/Home/SPDetail?id={{x.id}}">{{x.product_name}}</a></h5>
+
+                                            <div class="content_price">
+                                                <span class="price product-price"><span style="color: black">Giá bán:</span> {{x.price}}</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            }
+                            <br /><br />
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- end featured category -->
+        <!-- end featured category -->
+    </div>
+</div>
+
+<script src="~/Scripts/controllers/Client.js"></script>

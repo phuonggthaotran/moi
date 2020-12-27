@@ -37,11 +37,11 @@
             </div>
 
 
-            <div class="topnav">
+            <div class="topnav" @*ng-controller="SearchController"*@>
                 <div class="search-container">
-                    <form action="/action_page.php">
-                        <input type="text" placeholder="Tìm kiếm.." name="search">
-                        <button type="submit"><span><i class="fas fa-search"></i></span></button>
+                    <form action="" method="get">
+                        <input type="text" placeholder="Tìm kiếm.." name="search" ng-model="product_name">
+                        <button type="submit" ng-click="Search(product_name)" href="/Home/timkiemsp"><span><i class="fas fa-search"></i></span></button>
                     </form>
                 </div>
             </div>

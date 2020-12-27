@@ -1764,7 +1764,7 @@
     </Compile>
     <Compile Include="Models\Brand.cs" />
     <Compile Include="Models\Category.cs" />
-    <Compile Include="Models\CTDonHang.cs" />
+    <Compile Include="Models\GioHang.cs" />
     <Compile Include="Models\DangNhap.cs" />
     <Compile Include="Models\DonDatHang.cs" />
     <Compile Include="Models\Donhang.cs" />
@@ -2072,6 +2072,7 @@
     <Content Include="Views\Shared\_Danhmuc.cshtml" />
     <Content Include="Views\SanPham\SPDetail.cshtml" />
     <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\Home\timkiemsp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

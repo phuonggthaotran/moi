@@ -17,19 +17,7 @@ namespace DA3Last.Controllers
         {
             return View();
         }
-        public ActionResult LienHe()
-        {
-            return View();
-        }
-        public ActionResult ChinhSachThanhToan()
-        {
-            return View();
-        }
-        public ActionResult GioiThieu()
-        {
-            return View();
-        }
-        public ActionResult HuongDanMuaHang()
+        public ActionResult timkiemsp()
         {
             return View();
         }
@@ -45,6 +33,7 @@ namespace DA3Last.Controllers
             var loai = cateb.layLoai(name);
             return Json(loai, JsonRequestBehavior.AllowGet);
         }
+
         
     }
 }

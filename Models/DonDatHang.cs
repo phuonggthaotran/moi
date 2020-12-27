@@ -9,6 +9,6 @@ namespace DA3Last.Models
     {
         public KhachHang Khach { get; set; }
         public double TongTien { get; set; }
-        public List<CTDonHang> LCtDonHang { get; set; }
+        public List<GioHang> LCtDonHang { get; set; }
     }
 }

@@ -21,13 +21,13 @@ namespace DA3Last.Controllers
         {
             if (Session["giohang"] == null)
             {
-                Session["giohang"] = new List<CTDonHang>();
+                Session["giohang"] = new List<GioHang>();
             }
-            List<CTDonHang> giohang = Session["giohang"] as List<CTDonHang>;
-            CTDonHang d = null;
+            List<GioHang> giohang = Session["giohang"] as List<GioHang>;
+            GioHang d = null;
             if (giohang.Find(m => m.product_name == s.product_name) == null)
             {
-                d = new CTDonHang();
+                d = new GioHang();
                 d.product_name = s.product_name;
                 d.price = Convert.ToInt32(s.price);
                 d.image = s.image;
@@ -39,14 +39,14 @@ namespace DA3Last.Controllers
         }
         public JsonResult GetCarts()
         {
-            List<CTDonHang> ds = new List<CTDonHang>();
+            List<GioHang> ds = new List<GioHang>();
             if (Session["giohang"] == null)
             {
-                Session["giohang"] = new List<CTDonHang>();
+                Session["giohang"] = new List<GioHang>();
             }
             else
             {
-                ds = Session["giohang"] as List<CTDonHang>;
+                ds = Session["giohang"] as List<GioHang>;
             }
             return Json(new { DSDonHang = ds }, JsonRequestBehavior.AllowGet);
         }

@@ -28,16 +28,18 @@ namespace DA3Last.Areas.Admin.Controllers
         [HttpPost]
         public JsonResult DangNhap(string us, string pw)
         {
-            LoginBus dnb = new LoginBus();
-            Users dn = dnb.checkUser(us, pw);
-            if (dn == null || dn.Role != "Admin" && dn.Role != "KhachHang")
+            LoginBus lb = new LoginBus();
+            Users u = lb.checkUser(us, pw);
+            if (u == null) //Tài khoản không đúng
             {
-                return Json(dn, JsonRequestBehavior.AllowGet);
+                return Json(u, JsonRequestBehavior.AllowGet);
             }
-            else
+            else  //Tài khoản đúng
             {
+                //Session.Add("User_Session", u);
                 FormsAuthentication.SetAuthCookie(us, false);
-                return Json(dn, JsonRequestBehavior.AllowGet);
+                return Json(u, JsonRequestBehavior.AllowGet);
+                // return RedirectToAction("index", "Home");
             }
         }
     }

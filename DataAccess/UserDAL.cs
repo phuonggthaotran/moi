@@ -20,7 +20,7 @@ namespace DA3Last.DataAccess
             }
             else
             {
-                Users us = new Users(int.Parse(dt.Rows[0][0].ToString()), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString());
+                Users us = new Users(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString());
                 return us;
             }
             
@@ -39,11 +39,11 @@ namespace DA3Last.DataAccess
             foreach (DataRow dr in dt.Rows)
             {
                 Users u = new Users();
-                u.UserID = Convert.ToInt32(dr[0]);
-                u.UserName = Convert.ToString(dr[1]);
-                u.Pass = Convert.ToString(dr[2]);
-                u.Role = Convert.ToString(dr[3]);
-                u.Active = Convert.ToString(dr[4]);
+                
+                u.UserName = Convert.ToString(dr[0]);
+                u.Pass = Convert.ToString(dr[1]);
+                u.Role = Convert.ToString(dr[2]);
+                u.Active = Convert.ToString(dr[3]);
                 l.Add(u);
             }
             return l;

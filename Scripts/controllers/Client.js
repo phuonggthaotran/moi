@@ -1,7 +1,90 @@
-﻿
-/// <reference path="../angular.min.js" />
-/// <reference path="../angular.js" />
+﻿/// <reference path="../angular.js" />
 var app = angular.module('HomeApp', []);
+//menu động
+app.controller("brand", function ($scope, $http) {
+    $http.get("/Home/getThuongHieu").then(function (res) {
+        $scope.brand = res.data;
+    });
+});
+//Danh sách sp trang home
+app.controller("myctrl", function ($scope, $http, $rootScope) {
+    $http.get('/SanPham/getSP').then(function (res) {
+        $scope.lisp = res.data;
+    });
+    //$rootScope.AddCart = function (s) {
+    //    $http({
+    //        method: 'POST',
+    //        datatype: 'json',
+    //        url: '/GioHang/AddCart',
+    //        data: JSON.stringify(s)
+    //    }).then(function (d) {
+    //        alert("Đã thêm vào giỏ hàng !");
+    //        ; if (d.data.ctdon != null) {
+    //            $rootScope.dsDonHang.push(d.data.ctdon);
+    //        }
+    //    }, function () { alert("lỗi"); });
+    //};
+    //$http.get('/GioHang/GetCarts').then(function (d) {
+    //    $rootScope.dsDonHang = d.data.DSDonHang;
+    //});
+    //$rootScope.slgiam = function () {
+    //    $scope.SL = $scope.SL - 1;
+    //    $scope.TT = $scope.DG * $scope.SL;
+
+    //}
+    //$rootScope.sltang = function () {
+    //    $scope.SL = $scope.SL + 1;
+    //    $scope.TT = $scope.DG * $scope.SL;
+
+    //}
+    //$rootScope.ThanhToan = function (s) {
+    //    $scope.TSP = s.name;
+    //    $scope.DG = s.price;
+    //    $scope.SL = 1;
+    //    //  $scope.TL = s.TenLoai;
+    //    $scope.HA = s.image;
+    //    $scope.TT = $scope.DG * $scope.SL;
+    //};
+    //$http.get('/GioHang/GetDonHang').then(function (d) {
+    //    $rootScope.listdh = d.data;
+    //});
+    //$rootScope.DatHang = function () {
+    //    $scope.dh.name = $scope.TSP;
+    //    $scope.dh.price = $scope.DG;
+    //    $scope.dh.quantity = $scope.SL;
+    //    $scope.dh.total = $scope.TT;
+    //    $scope.dh.status = "Chưa Xác Thực";
+    //    $scope.dh.date = new Date();
+    //    $http({
+    //        method: 'POST',
+    //        datatype: "json",
+    //        url: '/GioHang/themdonhang',
+    //        data: $scope.dh
+    //    }).then(function (d) {
+    //        alert("Đặt hàng thành công!");
+
+    //    }, function (error) {
+    //        alert(error);
+    //    });
+    //}
+    //$rootScope.name = "";
+    //$rootScope.listtimkiem = null;
+    //$rootScope.Tim = function (Ten) {
+    //    $http({
+    //        method: 'Post',
+    //        url: '/SanPham/timSP',
+    //        params: { name: Ten }
+    //    }).then(function (d) {
+    //        if (d.data == "") {
+    //            alert("Không Có Sản phẩm đó");
+    //        }
+    //        else {
+    //            $rootScope.listtimkiem = d.data;
+    //        }
+    //    });
+    //};
+});
+
 //app.controller("SanPhamCtrl", function ($scope, $rootScope, $http) {
 //    $http.get('/SanPham/getSP').then(function (d) {
 //        $scope.dssp = d.data;
@@ -94,41 +177,9 @@ var app = angular.module('HomeApp', []);
 //    };
 //});
 
-app.controller("brand", function ($scope, $http) {
-    $http.get("/Home/getThuongHieu").then(function (res) {
-        $scope.brand = res.data;
-    });
-});
-app.controller("myctrl", function ($scope, $http) {
-    $http.get('/SanPham/getSP').then(function (res) {
-        $scope.lisp = res.data;
-    });
-    $http.get('/GioHang/GetCarts').then(function (d) {
-        $rootScope.dsDonHang = d.data.DSDonHang;
-    });
-    $rootScope.AddCart = function (s) {
-        $http({
-            method: 'POST',
-            datatype: 'json',
-            url: '/GioHang/AddCart',
-            data: JSON.stringify(s)
-        }).then(function (d) {
-            alert("Thêm vào giỏ hàng thành công !!!");
-            if (d.data.ctdon != null) {
-                $rootScope.dsDonHang.push(d.data.ctdon);
-            }
 
-        }, function (e) { alert("Lỗi"); });
-    };
-
-
-});
 //Lấy chi tiết sản phẩm
-//app.controller("spdetail", function ($scope, $http) {
-//    $http.get("/SanPham/Chitietsp").then(function (res) {
-//        $scope.onesp = res.data;
-//    });
-//});
+
 const urlParams = new URLSearchParams(window.location.search);
 app.controller("spdetail", ($scope, $http,$rootScope) => {
     let id = urlParams.get('id');
@@ -147,15 +198,23 @@ app.controller("spdetail", ($scope, $http,$rootScope) => {
         }).then(res => {
             $scope.sanPhamLienQuan = res.data;
         });
-        $rootScope.ThemVaoGio = (id) => {
-            $http.post('/GioHang/AddCart', { MaSP: id }).then(res => {
-                $rootScope.giohang = res.data;
-                toastr.success('Đã thêm sản phẩm vào giỏ hàng!', 'Thành công', { "closeButton": true });
-            });
-        }
-       
     });
-    //
+    $rootScope.AddCart = function (s) {
+        $http({
+            method: 'POST',
+            datatype: 'json',
+            url: '/GioHang/AddCart',
+            data: JSON.stringify(s)
+        }).then(function (d) {
+            alert("Đã thêm vào giỏ hàng !");
+            if (d.data.ctdon != null) {
+                $rootScope.dsDonHang.push(d.data.ctdon);
+            }
+        }, function () { alert("lỗi"); });
+    };
+    $http.get('/GioHang/GetCarts').then(function (d) {
+        $rootScope.dsDonHang = d.data.DSDonHang;
+    });
 });
 app.controller("loaisp", function ($scope, $http) {
     $http.get("/LoaiSanPham/getAllLoaiSP").then(function (res) {

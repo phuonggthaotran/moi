@@ -67,6 +67,8 @@ myapp.controller("QLDonHangController", function ($scope, $rootScope, $http) {
                     if ($scope.listdh[i].id = $scope.sp.id) {
                         $scope.listdh[i].price = $scope.sp.price;
                         $scope.listdh[i].email = $scope.sp.email;
+                        $scope.listdh[i].name = $scope.sp.name;
+                        $scope.listdh[i].status = $scope.sp.status;
                         $scope.listdh[i].phone_number = $scope.sp.phone_number;
                         $scope.listdh[i].address_shipping = $scope.sp.address_shipping;
                         $scope.listdh[i].total = $scope.sp.quantity * $scope.listdh[i].price;
@@ -169,15 +171,17 @@ myapp.controller("QLProductController", function ($scope, $rootScope, $http, Upl
                 method: 'POST',
                 datatype: "json",
                 url: '/Admin/Product/Insert',
-                data: JSON.stringify($scope.pr)
+                data: $scope.pr
+
             }).then(function (d) {
                 if (d.data == "") {
                     $scope.listsp.push($scope.pr);
                     $scope.pr = null;
                     alert("Thêm thành công...!");
                 } else {
-                    alert("Thêm thành công...!");
+                    
                 }
+                window.location.reload();
             }, function (error) {
                 alert(error);
             });

@@ -40,12 +40,12 @@
 
                         <tr ng-repeat="nb in listdh" ng-class-even="'even'" ng-class-odd="'odd'">
                             <td>{{nb.id}}</td>
-                            <td>{{nb.product_name}}</td>
+                            <td>{{nb.name}}</td>
                             <td>{{nb.quantity}}</td>
                             <td>{{nb.price}}</td>
                             <td>{{nb.address_shipping}}</td>
                             <td>{{nb.phone_number}}</td>
-                            <td>{{nb.product_name}}</td>
+                           
                             <td>{{nb.email}}</td>
                             <td>{{nb.total}}</td>
                             <td>{{nb.status}}</td>
@@ -102,10 +102,7 @@
                                    class="form-control">
                             <i class="form-group__bar"></i>
                         </div>
-                        <div class="form-group">
-                            <label for="">Ảnh:</label>
-                            <input type="file" class="form-control" readonly ng-model="sp.image" ngf-select="UploadFiles($files,'Anh')">
-                        </div>
+                       
                         <div class="form-group">
                             <label for="">Mô tả: </label>
                             <textarea class="form-control" placeholder="" ng-model="sp.description"></textarea>

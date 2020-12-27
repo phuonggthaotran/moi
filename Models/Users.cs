@@ -9,9 +9,8 @@ namespace DA3Last.Models
     public partial class Users
     {
         [Key]
-        public int UserID { get; set; }
-
-        [StringLength(50)]
+        
+        
         public string UserName { get; set; }
 
         [StringLength(50)]
@@ -25,9 +24,9 @@ namespace DA3Last.Models
 
         public Users() { }
 
-        public Users(int userID, string userName, string passWord, string role, string active)
+        public Users( string userName, string passWord, string role, string active)
         {
-            this.UserID = userID;
+            
             this.UserName = userName;
             this.Pass = passWord;
             this.Role = role;
