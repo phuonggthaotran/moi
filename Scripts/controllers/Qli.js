@@ -1,4 +1,5 @@
-﻿/// <reference path="../angular.js" />
+﻿
+/// <reference path="../angular.js" />
 /// <reference path="../angular.min.js" />
 var myapp = angular.module("MyApp", ['angularUtils.directives.dirPagination', 'ngFileUpload', 'ui.bootstrap']);
 //QL đơn hàng
@@ -181,14 +182,14 @@ myapp.controller("QLProductController", function ($scope, $rootScope, $http, Upl
         }
     };
 
-    $scope.UploadFiles = function (files, kieu) {
+    $scope.UploadAnh = function (files, anh) {
         $scope.SelectedFiles = files;
         if ($scope.SelectedFiles && $scope.SelectedFiles.length) {
             Upload.upload({
                 url: '/Admin/Product/Upload',
                 data: { files: $scope.SelectedFiles, product_name: $scope.pr.product_name }
             }).then(function (d) {
-                if (kieu == 'Anh') {
+                if (anh == 'Anh') {
                     $scope.pr.image = d.data[0];
                 }
             }, function (error) { alert("Lỗi...!"); });

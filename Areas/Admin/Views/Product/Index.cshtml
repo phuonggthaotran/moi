@@ -15,8 +15,8 @@
                     <thead class="thead-default">
                         <tr>
 
-                            <th>Tên loại</th>
-                            <th>Tên nhà cung cấp</th>
+                            <th>Mã loại</th>
+                            <th>Mã nhà cung cấp</th>
                             <th>Tên sản phẩm</th>
                             <th>Giá</th>
                             <th>Hình ảnh</th>
@@ -53,7 +53,7 @@
                             <td>{{sp.supplier_id}}</td>
                             <td>{{sp.product_name}}</td>
                             <td>{{sp.price}}</td>
-                            <td><img src="~/Assets/client/image/{{sp.image}}" width="120px" alt="Alternate Text" /></td>
+                            <td><img src="~/Assets/client/image/{{sp.image}}" style="width:120px" alt="Alternate Text" /></td>
                             <td>{{sp.quantity}}</td>
                             <td>{{sp.screensize}}</td>
                             <td>{{sp.resolution}}</td>
@@ -133,7 +133,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Ảnh:</label>
-                            <input type="file" name="image" id="image" class="form-control" readonly ng-model="pr.image" ngf-select="UploadFiles($files,'Anh')">
+                            <input type="file" name="image" id="image" class="form-control" readonly ng-model="pr.image" ngf-select="UploadAnh($files,'Anh')">
                         </div>
                         <div class="form-group">
                             <label for="">Số lượng: </label>
