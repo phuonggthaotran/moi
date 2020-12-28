@@ -1,6 +1,6 @@
 ﻿/// <reference path="../angular.js" />
 /// <reference path="../angular.min.js" />
-var myapp = angular.module("MyApp", ['ngFileUpload']);
+var myapp = angular.module("MyApp", ['angularUtils.directives.dirPagination', 'ngFileUpload', 'ui.bootstrap']);
 //QL đơn hàng
 myapp.controller("QLDonHangController", function ($scope, $rootScope, $http) {
     $http.get('/Admin/QLDonHang/GetDonHang').then(function (d) {
@@ -91,14 +91,7 @@ myapp.controller("QLProductController", function ($scope, $rootScope, $http, Upl
     $http.get('/Admin/Supplier/getNCC').then(res => {
         $rootScope.dsncc = res.data;
     });
-  
-     //hàm lấy ra tên loại, đưa vào mã loại sẽ trả về tên loại tương ứng
-    $scope.laytenloai = (category_id) => {
-        return $rootScope.listlsp.filter(m => m.category_id == category_id)[0].name;
-    };
-    $scope.laythuonghieu = (supplier_id) => {
-        return $rootScope.dsncc.filter(n => n.supplier_id == supplier_id)[0].name;
-    };
+ 
     $scope.ThemSP= function () {
         $scope.c = "Thêm";
         $scope.buttex = "Add";
@@ -201,6 +194,35 @@ myapp.controller("QLProductController", function ($scope, $rootScope, $http, Upl
             }, function (error) { alert("Lỗi...!"); });
         }
     };
+    $scope.maxSize = 5;     // Limit number for pagination display number.  
+    $scope.totalCount = 0;  // Total number of items in all pages. initialize as a zero  
+    $scope.pageIndex = 1;   // Current page number. First page is 1.-->  
+    $scope.pageSizeSelected = 5; // Maximum number of items per page.  
+
+    $scope.GetSanPhamList = function () {
+        $http.get("http://localhost:64769/Admin/Product/GetSanPhamPT?pageIndex=" + $scope.pageIndex + "&pageSize=" + $scope.pageSizeSelected).then(
+            function (response) {
+                $scope.ListSanPham = response.data.SanPhams;
+                $scope.totalCount = response.data.totalCount;
+            },
+            function (err) {
+                var error = err;
+            });
+    }
+
+    //Loading employees list on first time  
+    $scope.GetSanPhamList();
+
+    //This method is calling from pagination number  
+    $scope.pageChanged = function () {
+        $scope.GetSanPhamList();
+    };
+
+    //This method is calling from dropDown  
+    $scope.changePageSize = function () {
+        $scope.pageIndex = 1;
+        $scope.GetSanPhamList();
+    };  
 
 });
 //QL Thương hiệu

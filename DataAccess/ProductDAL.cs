@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using DA3Last.Models;
@@ -87,6 +88,7 @@ namespace DA3Last.DataAccess
        
         //Thêm sửa xóa Admin
 
+
         public string ThemProduct(Product tb)
         {
             string them = "INSERT into products values('" + tb.category_id + "','" + tb.supplier_id + "','" + tb.product_name + "','" + tb.price + "','" + tb.image +"','" + tb.quantity + "','" + tb.screensize + "','" + tb.resolution + "','" + tb.number_of_HDMI_ports + "','" + tb.number_of_USB_ports + "','" + tb.voice_control + "','" + tb.wifi + "','" + tb.release_date + "','" + tb.isContinue  + "','" + tb.description+ "')";
@@ -101,6 +103,27 @@ namespace DA3Last.DataAccess
         {
             string st = "update products set category_id='"+tb.category_id+ "',supplier_id='" + tb.supplier_id + "'  product_name ='" + tb.product_name + "',price ='" + tb.price + "', image ='" + tb.image + "', quantity ='" + tb.quantity + "', screensize = '" + tb.screensize + "', resolution = '" + tb.resolution + "', number_of_HDMI_ports = '" + tb.number_of_HDMI_ports + "',number_of_USB_ports = '" + tb.number_of_USB_ports + "',voice_control = '" + tb.voice_control + "',wifi='" + tb.wifi+"',release_date = '" + tb.release_date + "',isContinue = '" + tb.isContinue + "',description = '" + tb.description + "'where id = '" + tb.id + "'";
             return dth.ExcuteNonQuery(st);
+        }
+        //Phaan trang ADmin
+        public SanPhamList GetSanPham(int pageIndex, int pageSize)
+        {
+            SanPhamList spl = new SanPhamList();
+            List<Product> l = new List<Product>();
+            SqlDataReader dr = dth.StoreReaders("GetSanPhams", pageIndex, pageSize);
+            while (dr.Read())
+            {
+                Product s = new Product(int.Parse(dr[0].ToString()),int.Parse( dr[1].ToString()),int.Parse( dr[2].ToString()), dr[3].ToString(),
+                    int.Parse(dr[4].ToString()), dr[5].ToString(), int.Parse(dr[6].ToString()),dr[7].ToString(), dr[8].ToString(),int.Parse(dr[9].ToString()),
+                    int.Parse(dr[10].ToString()), dr[11].ToString(), dr[12].ToString(), dr[13].ToString(), dr[14].ToString(), dr[15].ToString());
+                l.Add(s);
+            }
+            spl.SanPhams = l;
+            dr.NextResult();
+            while (dr.Read())
+            {
+                spl.totalCount = dr["totalCount"].ToString();
+            }
+            return spl;
         }
         //Lấy về sản phẩm theo loại
         //theo loại TV

@@ -24,6 +24,12 @@ namespace DA3Last.Areas.Admin.Controllers
             return View();
         }
         [HttpGet]
+        public JsonResult GetSanPhamPT(int pageIndex, int pageSize)
+        {
+            SanPhamList spl = productBUS.LaySanPhamPT(pageIndex, pageSize);
+            return Json(spl, JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
         public JsonResult getSP()
         {
             List<Product> ldt = productBUS.LayAllSP();

@@ -40,6 +40,12 @@ namespace DA3Last.Bussiness
         {
             return dtd.LayAllProduct();
         }
+        //Admin
+        public SanPhamList LaySanPhamPT(int pageIndex, int pageSize)
+        {
+            SanPhamList spList = dtd.GetSanPham(pageIndex, pageSize);
+            return spList;
+        }
         public string ThemSP(Product dt)
         {
             return dtd.ThemProduct(dt);

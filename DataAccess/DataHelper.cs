@@ -62,5 +62,31 @@ namespace DA3Last.DataAccess
             SqlCommandBuilder cm = new SqlCommandBuilder(da);
             da.Update(dt);
         }
+        //Phan trang
+        public SqlDataReader StoreReaders(string tenStore, params object[] giatri)
+        {
+
+            SqlCommand cm;
+
+            moketnoi();
+            try
+            {
+                cm = new SqlCommand(tenStore, con);
+                cm.CommandType = CommandType.StoredProcedure;
+                SqlCommandBuilder.DeriveParameters(cm);
+                for (int i = 1; i < cm.Parameters.Count; i++)
+                {
+                    cm.Parameters[i].Value = giatri[i - 1];
+                }
+                SqlDataReader dr = cm.ExecuteReader();
+                return dr;
+            }
+            catch
+            {
+                return null;
+
+            }
+
+        }
     }
 }
