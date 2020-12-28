@@ -62,7 +62,7 @@ namespace DA3Last.Areas.Admin.Controllers
         public JsonResult Upload(string name)
         {
             List<string> l = new List<string>();
-            string path = Server.MapPath("~/Assets/client/image/ProImg/" + name + "/");
+            string path = Server.MapPath("~/Assets/client/image" + name + "/");
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);

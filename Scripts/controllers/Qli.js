@@ -1,6 +1,7 @@
-﻿
+﻿/// <reference path="../angular.min.js" />
 /// <reference path="../angular.js" />
-/// <reference path="../angular.min.js" />
+///// <reference path="../angular.js" />
+///// <reference path="../angular.min.js" />
 var myapp = angular.module("MyApp", ['angularUtils.directives.dirPagination', 'ngFileUpload', 'ui.bootstrap']);
 //QL đơn hàng
 myapp.controller("QLDonHangController", function ($scope, $rootScope, $http) {
@@ -189,7 +190,7 @@ myapp.controller("QLProductController", function ($scope, $rootScope, $http, Upl
                 url: '/Admin/Product/Upload',
                 data: { files: $scope.SelectedFiles, product_name: $scope.pr.product_name }
             }).then(function (d) {
-                if (anh == 'Anh') {
+                if (anh == 'image') {
                     $scope.pr.image = d.data[0];
                 }
             }, function (error) { alert("Lỗi...!"); });

@@ -272,6 +272,7 @@
     <Content Include="Assets\admin\vendors\jquery-text-counter\textcounter.js" />
     <Content Include="Assets\admin\vendors\jquery-text-counter\textcounter.min.js" />
     <Content Include="Assets\admin\vendors\jquery\jquery.js" />
+    <Content Include="Assets\admin\vendors\jquery\jquery.min.js" />
     <Content Include="Assets\admin\vendors\jqvmap\jquery.vmap.js" />
     <Content Include="Assets\admin\vendors\jqvmap\jquery.vmap.min.js" />
     <Content Include="Assets\admin\vendors\jqvmap\jqvmap.css" />

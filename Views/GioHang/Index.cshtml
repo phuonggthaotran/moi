@@ -12,27 +12,26 @@
             <table style="width:1200px;" ng-controller="spdetail">
                 <!-- <img src="Image/giohang.jpg" style="width: 650px; height: 300px;font-weight: 300px;"> -->
                 <tr align="center">
-                    <th style="padding: 10px;">Thông tin đơn hàng</th>
-                    <th style="padding: 10px;">Hình ảnh</th>
-                    <th style="padding: 10px;">Số lượng</th>
-                    <th style="padding: 10px;">Giá tiền</th>
-                    <th style="padding: 10px;">Thao tác</th>
+                    <th style="padding: 10px;border-bottom:1px solid gray;">Thông tin đơn hàng</th>
+                    <th style="padding: 10px;border-bottom:1px solid gray;">Hình ảnh</th>
+                    <th style="padding: 10px;border-bottom:1px solid gray;">Số lượng</th>
+                    <th style="padding: 10px;border-bottom:1px solid gray;">Giá tiền</th>
+                    <th style="padding: 10px;border-bottom:1px solid gray;">Thao tác</th>
 
                 </tr>
                 <tr align="center" id="xoaNSP1" ng-repeat="s in dsDonHang">
-                    <td>
+                    <td style="padding: 10px;border-bottom:1px solid gray;">
 
                         <p style="font-size: 14px;padding-top: 10px;">
                             <a href="1.html" style="text-decoration: none;color: blue;"><span style="font-size: 18px;"> {{s.product_name}}</span> </a><br>
                     </td>
-                    <td><img src="~/Assets/client/image/{{s.image}}" style="height:120px; width:145px;float: left;margin: 10px;"></td>
-                    <td id="div6_2">
-                        <button ng-click="slgiam()">-</button><input type="text" id="textsl" value="{{SL}}"><button ng-click="sltang()">+</button>
-                    </td>
-                    <td style="padding: 10px;">{{s.price}}</td>
+                    <td style="padding: 10px;border-bottom:1px solid gray;"><img src="~/Assets/client/image/{{s.image}}" style="height:120px; width:145px;float: left;margin: 10px;"></td>
+                    <td style="padding: 10px;border-bottom:1px solid gray;">{{s.price}}</td>
+
                     <td><a href="/GioHang/ThanhToan"><input type="button" value="Thanh Toán" style="background-color: cadetblue;"></a></td>
+                    <td><a href=""><input type="button" value="Xóa" style="background-color: cadetblue;"></a></td>
                 </tr>
-               
+
 
             </table>
             <p style="text-align:right;padding-right:30px">
@@ -43,9 +42,11 @@
             <p></p>
 
             <!-- <button style="width: 180px;height: 40px; background-color: #F97407; margin-top: 10px;"><a href="#">Tiến Hành Thanh Toán</button>&nbsp;&nbsp; -->
-            
+            <input type="submit" name="" value="Thanh toán tất cả" style="width: 180px;height: 40px; background-color: #f5791f; margin-top: 10px;color: white;">
+            <button style="width: 180px;height: 40px; background-color: #f5791f; margin-top: 10px;"><a href="/Home/Index" style="text-decoration: none;color: white;">Quay Lại Mua Hàng</a></button>
         </form>
     </div>
 </section>
 <div class="clear"></div>
 
+<link href="~/Assets/client/css/trangchuda.css" rel="stylesheet" />

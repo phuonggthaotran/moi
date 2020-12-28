@@ -657,3 +657,20 @@ img {vertical-align: middle;}
                 font-size: 12px;
                 text-transform: uppercase;
             }
+
+table #xoaNSP1 #div6_2 button {
+    width: 26px;
+    height: 26px;
+    background: #FFFFFF;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+table #xoaNSP1 #div6_2 {
+    margin-left: 350px;
+}
+table #xoaNSP1 #div6_2 input {
+        width: 20px;
+        height: 22px;
+        border: 1px solid #ddd;
+    }

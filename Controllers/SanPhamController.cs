@@ -129,17 +129,20 @@ namespace DA3Last.Controllers
             }
         }
        
-        public ActionResult SPDetail()
+        public ActionResult SPDetail(int id)
         {
+            Session.Add("id", id);
             return View();
         }
-            public JsonResult chitiet(int id)
+            public JsonResult chitiet()
         {
-           
-            //lay ve 1sp
-            var ds = dtb.lay1sp(id);
-            //loai bo san pham ma minh da hien thi
-            return Json(ds, JsonRequestBehavior.AllowGet);
+            Product lsp = dtb.lay1sp(Convert.ToInt32(Session["id"].ToString()));
+            //List<SanPham> lsp = spbus.LaySP("Lẩu")
+            return Json(lsp, JsonRequestBehavior.AllowGet);
+            ////lay ve 1sp
+            //var ds = dtb.lay1sp(id);
+            ////loai bo san pham ma minh da hien thi
+            //return Json(ds, JsonRequestBehavior.AllowGet);
         }
         public JsonResult getSPLienquan(int id)
         {
