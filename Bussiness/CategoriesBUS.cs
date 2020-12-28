@@ -24,7 +24,7 @@ namespace DA3Last.Bussiness
             return dtd.getAll();
         }
 
-      
+
         public string ThemLoai(Category dt)
         {
             return dtd.ThemLoai(dt);
