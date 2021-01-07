@@ -27,6 +27,7 @@ namespace DA3Last.Bussiness
         public List<Product> tu20den50() { return dtd.tu20den50(); }
         public List<Product> tren50() { return dtd.tren50(); }
         public List<Product> tivi4k() { return dtd.TV4k(); }
+        public List<Product> tiviLG() { return dtd.TVLG(); }
         public List<Product> tivi8k() { return dtd.TV8k(); }
         public List<Product> Qled() { return dtd.Qled(); }
         public List<Product> Duoi55inch() { return dtd.duoi55inch(); }
@@ -41,11 +42,7 @@ namespace DA3Last.Bussiness
             return dtd.LayAllProduct();
         }
         //Admin
-        public SanPhamList LaySanPhamPT(int pageIndex, int pageSize)
-        {
-            SanPhamList spList = dtd.GetSanPham(pageIndex, pageSize);
-            return spList;
-        }
+        
         public string ThemSP(Product dt)
         {
             return dtd.ThemProduct(dt);

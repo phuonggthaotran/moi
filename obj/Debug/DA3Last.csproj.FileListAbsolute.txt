@@ -230,8 +230,8 @@ C:\Users\admin\Desktop\moi\bin\System.Web.Webpages.Razor.xml
 C:\Users\admin\Desktop\moi\bin\System.Web.Helpers.xml
 C:\Users\admin\Desktop\moi\bin\System.Web.Mvc.xml
 C:\Users\admin\Desktop\moi\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\admin\Desktop\moi\obj\Debug\DA3Last.csprojAssemblyReference.cache
 C:\Users\admin\Desktop\moi\obj\Debug\DA3Last.csproj.CoreCompileInputs.cache
 C:\Users\admin\Desktop\moi\obj\Debug\DA3Last.csproj.CopyComplete
 C:\Users\admin\Desktop\moi\obj\Debug\DA3Last.dll
 C:\Users\admin\Desktop\moi\obj\Debug\DA3Last.pdb
+C:\Users\admin\Desktop\moi\obj\Debug\DA3Last.csprojAssemblyReference.cache

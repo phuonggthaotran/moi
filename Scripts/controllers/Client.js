@@ -81,6 +81,12 @@ app.controller("TiviQled", function ($scope, $http) {
         $scope.tiviQled = res.data;
     });
 });
+app.controller("TiviLG", function ($scope, $http) {
+    $http.get("/SanPham/TVLG").then(function (res) {
+        $scope.tiviLG = res.data;
+    });
+});
+
 //Lấy sản phẩm theo kích thước màn hình
 app.controller("duoi55inch", function ($scope, $http) {
     $http.get("/SanPham/Duoi55inch").then(function (res) {

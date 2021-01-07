@@ -174,7 +174,7 @@ myapp.controller("QLProductController", function ($scope, $rootScope, $http, Upl
                     $scope.pr = null;
                     alert("Thêm thành công...!");
                 } else {
-                    
+                    alert("Thêm thành công...!");
                 }
                 window.location.reload();
             }, function (error) {
@@ -196,36 +196,6 @@ myapp.controller("QLProductController", function ($scope, $rootScope, $http, Upl
             }, function (error) { alert("Lỗi...!"); });
         }
     };
-    $scope.maxSize = 5;     // Limit number for pagination display number.  
-    $scope.totalCount = 0;  // Total number of items in all pages. initialize as a zero  
-    $scope.pageIndex = 1;   // Current page number. First page is 1.-->  
-    $scope.pageSizeSelected = 5; // Maximum number of items per page.  
-
-    $scope.GetSanPhamList = function () {
-        $http.get("http://localhost:64769/Admin/Product/GetSanPhamPT?pageIndex=" + $scope.pageIndex + "&pageSize=" + $scope.pageSizeSelected).then(
-            function (response) {
-                $scope.ListSanPham = response.data.SanPhams;
-                $scope.totalCount = response.data.totalCount;
-            },
-            function (err) {
-                var error = err;
-            });
-    }
-
-    //Loading employees list on first time  
-    $scope.GetSanPhamList();
-
-    //This method is calling from pagination number  
-    $scope.pageChanged = function () {
-        $scope.GetSanPhamList();
-    };
-
-    //This method is calling from dropDown  
-    $scope.changePageSize = function () {
-        $scope.pageIndex = 1;
-        $scope.GetSanPhamList();
-    };  
-
 });
 //QL Thương hiệu
 myapp.controller("QLBrandController", function ($scope, $rootScope, $http, Upload, $timeout, $document, $window) {
@@ -307,6 +277,7 @@ myapp.controller("QLBrandController", function ($scope, $rootScope, $http, Uploa
                 } else {
                     alert("Thêm thành công...!");
                 }
+                
             }, function (error) {
                 alert(error);
             });

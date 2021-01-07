@@ -61,6 +61,11 @@ namespace DA3Last.Controllers
             List<Product> ldt = dtb.LayAllSP();
             return Json(ldt, JsonRequestBehavior.AllowGet);
         }
+        public JsonResult TVLG()
+        {
+            List<Product> ldt = dtb.tiviLG();
+            return Json(ldt, JsonRequestBehavior.AllowGet);
+        }
         #region Sản phẩm theo giá
         public JsonResult duoi20tr()
         {

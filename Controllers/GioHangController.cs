@@ -23,20 +23,20 @@ namespace DA3Last.Controllers
         [HttpPost]
         public JsonResult AddCart(Product s)
         {
-            if (Session["giohang"] == null)
+            if (Session["giohang"] == null)//Neu gio hang chua duoc khoi tao
             {
-                Session["giohang"] = new List<GioHang>();
+                Session["giohang"] = new List<GioHang>();//khoi tao session gan vao danh sach ct don hang
             }
             List<GioHang> giohang = Session["giohang"] as List<GioHang>;
             GioHang d = null;
-            if (giohang.Find(m => m.product_name == s.product_name) == null)
+            if (giohang.Find(m => m.product_name == s.product_name) == null)//kiem tar xem san pham da co trong gio hang chua
             {
                 d = new GioHang();
                 d.product_name = s.product_name;
                 d.price = Convert.ToInt32(s.price);
                 d.image = s.image;
                
-                giohang.Add(d);
+                giohang.Add(d);//them
             }
 
             return Json(new { ctdon = d }, JsonRequestBehavior.AllowGet);
